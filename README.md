@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
-  StudHelp
  <body>
-   <p style="font-size: 24px;">StudHelp</p>
+   <p style="font-size: 40px;">StudHelp</p>
    <p style="font-size: 18px;">Trabalho da matéria DCC117 - Modelagem de Sistemas - UFJF</p>
     <h5>
       <a href="https://docs.google.com/document/d/1RxyWyKjqwz9kEvx3caPUfI-cxhhJ60OmMy1iSTVg0FQ/edit?usp=sharing" target="_blank">Documento de Requisitos</a>
