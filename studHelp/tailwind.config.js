@@ -4,7 +4,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        'page-blue' : '#7DC2D9'
+        'page-blue' : '#7DC2D9' ,
+        'start-bar' : '#58DDEF ',
+        'mid-bar' : "#00E0FF ",
+        'end-bar' : '#12DAF5',
       }
     },
   },
