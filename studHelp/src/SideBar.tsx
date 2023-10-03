@@ -17,13 +17,22 @@ function SideBar() {
           }`}
           onClick={() => setOpen(!open)}
         />
-        <div>
+        <div className="flex gap-x-2">
           <img
             src="./src/assets/logo.svg"
-            className={`cursor-pointer duration-500 w-20`}
+            className={`cursor-pointer duration-300 w-32 py-2 ${
+              !open && "scale-[0.80] origin-left py-0"
+            }`}
           />
-          <h1 className={`text-black origin-left font-sans left-3`}>
+          <h1
+            className={`text-black origin-left font-medium text-5xl left-3 duration-300 py-4 ${
+              !open && "scale-0"
+            }`}
+          >
             StudHelp
+            <h2 className="opacity-60 text-sm px-1 py-2">
+              Sua plataforma de estudo
+            </h2>
           </h1>
         </div>
       </div>
