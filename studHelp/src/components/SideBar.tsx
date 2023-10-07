@@ -10,7 +10,7 @@ function SideBar() {
     { title: "Fórum", src: "chat 1" },
   ];
   return (
-    <div className="flex">
+
       <div
         className={`${
           open ? "w-1/5" : "w-28"
@@ -79,7 +79,6 @@ function SideBar() {
           </h1>
         </div>
       </div>
-    </div>
   );
 }
 
