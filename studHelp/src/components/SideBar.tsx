@@ -1,5 +1,5 @@
-import { useState } from "react";
-import React from "react";
+import { useEffect, useState } from "react";
+//import React from "react";
 
 function SideBar() {
   const [open, setOpen] = useState(true);
@@ -9,16 +9,25 @@ function SideBar() {
     { title: "Grupos de Estudo", src: "reading-group 1" },
     { title: "Fórum", src: "chat 1" },
   ];
+
+  useEffect(() => {
+    const handleResize = () => {
+      setOpen(window.innerWidth > 500);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="flex">
       <div
         className={`${
-          open ? "w-3/2" : "w-28"
-        } duration-1000 h-screen bg-gradient-to-b from-blue-50  via-mid-bar to-blue-50 relative`}
+          open ? "w-1/2 md:w-[4-%] lg:w-1/3" : "w-24"
+        } duration-1000 h-screen bg-gradient-to-b from-blue-50 via-mid-bar to-blue-50 relative`}
       >
         <img
           src="./src/assets/right-arrow-angle 2.svg"
-          className={`absolute cursor-pointer -right-2 w-10 ${
+          className={`absolute cursor-pointer -right-2 w-10 top-0 ${
             open && "rotate-180"
           }`}
           onClick={() => setOpen(!open)}
@@ -26,21 +35,23 @@ function SideBar() {
         <div className="flex gap-x-2">
           <img
             src="./src/assets/logo.png"
-            className={`cursor-pointer duration-500 w-32 py-2
-            } ${!open && "scale-[0.80] origin-left py-0"}`}
+            className={`duration-500 w-32 py-2
+            } ${!open && "scale-[0.80] origin-left mt-4 py-2"}`}
           />
           <h1
-            className={`origin-left font-medium  max-sm::hidden text-5xl left-3 duration-300 py-4 ${
+            className={`origin-left font-medium  max-sm:text-[0rem] sm:text-[2.50rem] left-3 duration-300 py-4 ${
               !open && "scale-0"
             }`}
           >
             StudHelp
-            <h2 className="opacity-60 text-sm px-1 py-2">
+            <h2 className="opacity-60  max-sm:text-[0rem] text-sm px-1 py-2">
               Sua plataforma de estudo
             </h2>
           </h1>
         </div>
-        <div className="h-[1px] mt-7 bg-black opacity-40"></div>
+        <div
+          className={`h-[1px] mt-7 bg-black opacity-40 ${!open && "mt-4"} `}
+        ></div>
         <ul className="">
           {Menus.map((menu, index) => (
             <li
@@ -55,7 +66,7 @@ function SideBar() {
               />
 
               <span
-                className={`text-3xl font-medium origin-center duration-1000 ${
+                className={` max-sm:text-[1.5rem] text-3xl font-medium origin-center duration-1000 ${
                   !open && "hidden"
                 }`}
               >
@@ -65,7 +76,7 @@ function SideBar() {
           ))}
         </ul>
         <div className="h-[1px]  bg-black opacity-40"></div>
-        <div className="flex gap-x-2 mt-56 px-6 cursor-pointer opacity-50 hover:opacity-100">
+        <div className="flex absolute p-10 gap-x-2 bottom-0 px-6 cursor-pointer opacity-50 hover:opacity-100">
           <img
             src="./src/assets/about 1.svg"
             className={`scale-[1.3] duration-500 ${open && "rotate-[360deg]"} ${
@@ -73,7 +84,7 @@ function SideBar() {
             } `}
           />
           <h1
-            className={`origin-left font-light left-3  text-2xl px-3 opacity-40 ${
+            className={`origin-left font-ight left-3  text-2xl px-3 opacity-40 ${
               !open && "hidden"
             }`}
           >
@@ -81,7 +92,7 @@ function SideBar() {
           </h1>
         </div>
       </div>
-      </div>
+    </div>
   );
 }
 
