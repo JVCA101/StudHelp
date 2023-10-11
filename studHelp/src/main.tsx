@@ -1,9 +1,25 @@
-//import React from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 
 import "./index.css";
 import SideBar from "./components/SideBar.tsx";
+import HeaderAluno from "./components/HeaderAluno.tsx";
 
-// import { Header } from "./components/Header.tsx";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(<SideBar />);
+ReactDOM.createRoot(document.getElementById("root")!).render(
+<div className="">
+    <div className="absolute w-screen">
+    <SideBar />
+    </div>
+
+    <div className = "left-28 absolute">
+    <HeaderAluno />
+    </div>
+    
+
+    
+    
+</div>
+
+
+);

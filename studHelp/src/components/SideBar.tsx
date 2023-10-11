@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-//import React from "react";
+import React from "react";
 
 function SideBar() {
   const [open, setOpen] = useState(true);
@@ -22,7 +22,7 @@ function SideBar() {
     <div className="flex">
       <div
         className={`${
-          open ? "w-1/2 md:w-[4-%] lg:w-1/3" : "w-24"
+          open ? "w-1/2 md:w-[40%] min-[1200px]:w-[25%]" : "w-24"
         } duration-1000 h-screen bg-gradient-to-b from-blue-50 via-mid-bar to-blue-50 relative`}
       >
         <img
@@ -36,7 +36,7 @@ function SideBar() {
           <img
             src="./src/assets/logo.png"
             className={`duration-500 w-32 py-2
-            } ${!open && "scale-[0.80] origin-left mt-4 py-2"}`}
+            } ${!open && "scale-[1] w-24 origin-left mt-10"}`}
           />
           <h1
             className={`origin-left font-medium  max-sm:text-[0rem] sm:text-[2.50rem] left-3 duration-300 py-4 ${
