@@ -6,7 +6,6 @@ import "./index.css";
 import{
     createBrowserRouter,
     RouterProvider,
-    Route,
 } from "react-router-dom"
 import StudentPage from "./pages/studentPage.tsx";
 import ForumPage from "./pages/ForumPage.tsx";

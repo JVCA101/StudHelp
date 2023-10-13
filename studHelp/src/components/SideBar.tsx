@@ -24,6 +24,26 @@ function SideBar() {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
+    const setPageTitle = (href: string) => {
+      // Define the title based on the href
+      switch (href) {
+          case "aluno":
+              document.title = "Página do Aluno - StudHelp";
+              break;
+          case "disciplinas":
+              document.title = "Disciplinas - StudHelp";
+              break;
+          case "grupos":
+              document.title = "Grupos de Estudo - StudHelp";
+              break;
+          case "forum":
+              document.title = "Fórum - StudHelp";
+              break;
+          default:
+              document.title = "StudHelp";
+      }
+  };
+
     return (
         <div className="flex">
             <div
@@ -63,7 +83,9 @@ function SideBar() {
                         <li
                             key={index}
                             className={`text-sm flex items-co cursor-pointer p-2 hover:bg-purple-50 `}
-                            onClick={() => handleClick(menu.href)}
+                            onClick={() => {handleClick(menu.href)
+                                            setPageTitle(menu.href);} 
+                                          }
                         >
                             <img
                                 className={`w-20 px-2  py-4 duration-1000  ${
