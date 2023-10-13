@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import React from "react";
 
+
 function SideBar() {
-  const [open, setOpen] = useState(true);
+  
+    const [open, setOpen] = useState(true);
+
+
   const Menus = [
     { title: "Página do Aluno", src: "graduation 1" },
     { title: "Disciplinas", src: "book 1" },
@@ -22,7 +26,7 @@ function SideBar() {
     <div className="flex">
       <div
         className={`${
-          open ? "w-1/2 md:w-[40%] min-[1200px]:w-[25%]" : "w-24"
+          open ? "w-1/2 md:w-[40%] min-[1200px]:w-[25%]" : "w-[96px]"
         } duration-1000 h-screen bg-gradient-to-b from-blue-50 via-mid-bar to-blue-50 relative`}
       >
         <img
@@ -35,7 +39,7 @@ function SideBar() {
         <div className="flex gap-x-2">
           <img
             src="./src/assets/logo.png"
-            className={`duration-500 w-32 py-2
+            className={`duration-500 w-32 py-2 px-1 
             } ${!open && "scale-[1] w-24 origin-left mt-10"}`}
           />
           <h1
@@ -50,7 +54,7 @@ function SideBar() {
           </h1>
         </div>
         <div
-          className={`h-[1px] mt-7 bg-black opacity-40 ${!open && "mt-4"} `}
+          className={`w-screen h-[1px] mt-7 bg-black opacity-40 ${!open && "mt-4"} `}
         ></div>
         <ul className="">
           {Menus.map((menu, index) => (
@@ -75,7 +79,7 @@ function SideBar() {
             </li>
           ))}
         </ul>
-        <div className="h-[1px]  bg-black opacity-40"></div>
+        <div className="h-[1px] w-screen bg-black opacity-40"></div>
         <div className="flex absolute p-10 gap-x-2 bottom-0 px-6 cursor-pointer opacity-50 hover:opacity-100">
           <img
             src="./src/assets/about 1.svg"

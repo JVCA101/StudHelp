@@ -8,6 +8,9 @@ export default {
         'start-bar' : '#58DDEF ',
         'mid-bar' : "#00E0FF ",
         'end-bar' : '#12DAF5',
+      },
+      fontFamily: {
+        'roboto' : ['Roboto', 'sans-serif'],
       }
     },
   },

@@ -1,10 +1,13 @@
 import React from "react";
 
-function HeaderAluno() {
+
+function HeaderAluno(){
   return (
-    <div className="bg-black h-screen w-full left-1/4 py-10">
-      <h1 className="text-5xl text-white p-4">PAGINA</h1>
+    <div className={`px-8 text-[2.5rem] font-roboto left-1/4 mt-[8rem] flex gap-x-28 "}`}>
+      <h1 className="align-baseline">Aluno: Gabriel Oliveira Quaresma</h1>
+      <h1 className="">Curso: Ciências da Computação</h1>
     </div>
+    
   );
 }
 
