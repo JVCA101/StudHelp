@@ -95,7 +95,7 @@ function SideBar() {
                             />
 
                             <span
-                                className={` max-sm:text-[1.5rem] text-3xl font-medium origin-center duration-1000 ${
+                                className={` max-sm:text-[1.5rem] text-3xl mt-7 font-medium origin-center duration-1000 ${
                                     !open && "hidden"
                                 }`}
                             >

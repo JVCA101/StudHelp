@@ -14,6 +14,17 @@ export default {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {};
+
+      // Definir a classe 'scale-200' com transform: scale(2);
+      newUtilities[".scale-200"] = {
+        transform: "scale(2.4)",
+      };
+
+      addUtilities(newUtilities, ["responsive", "hover"]);
+    },
+  ],
 }
 
