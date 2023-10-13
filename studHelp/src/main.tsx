@@ -2,20 +2,42 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import "./index.css";
-import SideBar from "./components/SideBar.tsx";
-import HeaderAluno from "./components/HeaderAluno.tsx";
-import BodyAlunoMaterias from "./components/BodyAlunoMaterias.tsx";
+
+import{
+    createBrowserRouter,
+    RouterProvider,
+    Route,
+} from "react-router-dom"
+import StudentPage from "./pages/studentPage.tsx";
+import ForumPage from "./pages/ForumPage.tsx";
+import GroupsPage from "./pages/GroupsPage.tsx";
+import DisciplinesPage from "./pages/DisciplinesPage.tsx";
+import LoginPage from "./pages/LoginPage.tsx";
+
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element:<LoginPage />,
+    },
+    {
+        path: "aluno",
+        element:<StudentPage />,
+    },
+    {
+        path: "disciplinas",
+        element:<DisciplinesPage />,
+    },
+    {
+        path: "grupos",
+        element:<GroupsPage />,
+    },
+    {
+        path: "forum",
+        element:<ForumPage />,
+    }
+]);
 
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-<div className="w-screen h-screen">
-    <div className="absolute w-screen">
-    <SideBar /> 
-    </div>
-
-    <div className = {`w-[50%] left-[50%] md:left-[40%] md:w-[60%] min-[1200px]:left-[25%] absolute min-[1200px]:w-[75%]`}>
-    <HeaderAluno /> 
-    <BodyAlunoMaterias />
-    </div>  
-</div>
+<RouterProvider router={router} /> 
 );
