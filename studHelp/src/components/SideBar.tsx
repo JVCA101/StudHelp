@@ -49,7 +49,7 @@ function SideBar() {
             <div
                 className={`${
                     open ? "w-1/2 md:w-[40%] min-[1200px]:w-[25%]" : "w-[96px]"
-                } duration-1000 h-screen bg-gradient-to-b from-blue-50 via-mid-bar to-blue-50 relative`}
+                } duration-1000 h-screen bg-gradient-to-b from-teal-100 via-teal-200 to-teal-50 relative`}
             >
                 <img
                     src="./src/assets/right-arrow-angle 2.svg"
@@ -76,21 +76,22 @@ function SideBar() {
                     </h1>
                 </div>
                 <div
-                    className={`w-screen h-[1px] mt-7 bg-black opacity-40 ${!open && "mt-4"} `}
+                    className={`w-screen h-[1px] mt-7 bg-black opacity-20 ${!open && "mt-4"} `}
                 ></div>
                 <ul className="">
                     {Menus.map((menu, index) => (
                         <li
                             key={index}
-                            className={`text-sm flex items-co cursor-pointer p-2 hover:bg-purple-50 `}
+                            className={`text-sm flex cursor-pointer p-2 hover:bg-purple-50 `}
                             onClick={() => {handleClick(menu.href)
                                             setPageTitle(menu.href);} 
                                           }
                         >
+                            <img src="./src/assets/right-arrow-angle 2.svg" className={` duration-1000 ${!open && "hidden"}`} />
                             <img
-                                className={`w-16 px-2  py-4 duration-1000  ${
+                                className={`w-16 scale-75 px-2  py-4 duration-1000  ${
                                     open && "rotate-[360deg]"
-                                } ${!open && "scale-[0.80]"}`}
+                                } ${!open && "scale-[1.0]"}`}
                                 src={`./src/assets/${menu.src}.svg`}
                             />
 
@@ -104,7 +105,7 @@ function SideBar() {
                         </li>
                     ))}
                 </ul>
-                <div className="h-[1px] w-screen bg-black opacity-40"></div>
+                <div className="h-[1px] w-screen bg-black opacity-20"></div>
                 <div className="flex absolute p-10 gap-x-2 bottom-0 px-6 cursor-pointer opacity-50 hover:opacity-100">
                     <img
                         src="./src/assets/about 1.svg"
