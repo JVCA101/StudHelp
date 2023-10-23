@@ -7,7 +7,7 @@ enum Dificuldade  //? adicionar mais opcoes?
     DIFICIL
 }
 
-class Disciplina
+export class Disciplina
 {
     private indiceAprovacao: number;
     readonly name: string;
@@ -19,14 +19,14 @@ class Disciplina
     public materiais: Array<MaterialApoio>;
 }
 
-class Turma
+export class Turma
 {
     readonly codigoDisciplina: string;
     readonly codigoSemestre: string;
     readonly aprovado: boolean;
 }
 
-class MaterialApoio
+export class MaterialApoio
 {
     public nome: string;
     public arquivo; //* Tipo: url

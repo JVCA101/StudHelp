@@ -1,6 +1,8 @@
 //* GrupoEstudo
 
-class GrupoEstudo
+import { Estudante } from "./Usuario";
+
+export class GrupoEstudo
 {
     readonly id: string;
     readonly disciplina: string;

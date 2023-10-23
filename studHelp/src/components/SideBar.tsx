@@ -45,7 +45,7 @@ function SideBar() {
   };
 
     return (
-        <div className="flex">
+        <div className="flex select-none">
             <div
                 className={`${
                     open ? "w-1/2 md:w-[40%] min-[1200px]:w-[25%]" : "w-[96px]"
@@ -105,7 +105,7 @@ function SideBar() {
                         </li>
                     ))}
                 </ul>
-                <div className="h-[1px] w-screen bg-black opacity-20"></div>
+               
                 <div className="flex absolute p-10 gap-x-2 bottom-0 px-6 cursor-pointer opacity-50 hover:opacity-100">
                     <img
                         src="./src/assets/about 1.svg"

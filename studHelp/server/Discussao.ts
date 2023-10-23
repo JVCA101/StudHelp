@@ -1,6 +1,9 @@
 //* Discussao, Comentario
 
-class Discussao
+import { Disciplina } from "./Disciplina";
+import { Usuario } from "./Usuario";
+
+export class Discussao
 {
     readonly criador: Usuario;
     readonly disciplina: Disciplina;
@@ -36,7 +39,7 @@ class Discussao
     }
 }
 
-class Comentario
+export class Comentario
 {
     readonly criador: Usuario;
     readonly data: Date;  // nao esta no diagrama

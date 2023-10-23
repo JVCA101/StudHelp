@@ -1,6 +1,10 @@
 //* Usuario, Estudante, Administrador
 
-class Usuario
+import { Curso } from "./Curso";
+import { Disciplina } from "./Disciplina";
+
+
+export class Usuario
 {
     private nome: string;
     private admin: boolean;
@@ -8,7 +12,7 @@ class Usuario
     readonly senha: string;
 }
 
-class Estudante extends Usuario
+export class Estudante extends Usuario
 {
     readonly curso: Curso;
     readonly historico: Array<Disciplina>;
@@ -17,7 +21,7 @@ class Estudante extends Usuario
     public grupos: Array<string>;
 }
 
-class Administrador extends Usuario
+export class Administrador extends Usuario
 {
     public banirEstudante(estudante: Estudante): void
     {

@@ -1,6 +1,8 @@
 //* Curso
 
-class Curso
+import { Disciplina } from "./Disciplina";
+
+export class Curso
 {
     readonly nome: string;
     readonly codigo: string;

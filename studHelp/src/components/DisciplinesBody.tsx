@@ -14,7 +14,6 @@ function DisciplinesBody() {
             Código:subject.getID() 
             </h2>
         </div>
-        <div className="h-[1px] w-full bg-black opacity-20 mt-5"></div>
         <div className='px-8 text-2xl mt-12 font-roboto'>
           
           <div className='flex gap-x-10'>
