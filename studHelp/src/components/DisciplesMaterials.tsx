@@ -11,7 +11,7 @@ function DisciplesMaterials() {
     return (
         <div className='mt-20 px-8'>
             <div className='flex gap-x-8 hover:font-bold cursor-pointer' onClick={toggleList}>
-               
+                {listOpen ? ( <img src= "./src/assets/folder (1) 1.svg" className='mt-1 duration-500' /> ) : ( <img src= "./src/assets/folder 1.svg" className='mt-1 duration-500' /> )}
                 <h1 className='text-[1.9rem] font-roboto'>
                     Material de Apoio
                 </h1>
