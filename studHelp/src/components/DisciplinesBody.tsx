@@ -6,7 +6,7 @@ function DisciplinesBody() {
   
   return (
     <div>
-        <div className='px-8 mt-10 font-roboto flex text-5xl gap-x-52'>
+        <div className='px-8 mt-4 font-roboto flex text-4xl gap-x-52'>
             <h1 className='font-bold text-blue-950'>
                Disciplina: subject.toSting()
             </h1>

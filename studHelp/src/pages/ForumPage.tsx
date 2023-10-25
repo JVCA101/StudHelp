@@ -7,6 +7,9 @@ function ForumPage() {
               <div className="absolute w-screen">
                   <SideBar /> 
               </div>
+              <h1 className='flex justify-center items-center font-roboto relative top-1/2'>
+                Serviços indisponíveis por enquanto
+              </h1>
       </div>
   )
 }

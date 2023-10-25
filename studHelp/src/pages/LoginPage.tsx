@@ -8,7 +8,7 @@ function LoginPage() {
 
     return (
         <div className='bg-blue-300 w-screen h-screen flex justify-center items-center relative'>
-            <img src={logoImage} className='scale-200 mt-64' style={{ position: 'absolute', top: '0' }} /> {/* Mantenha 'position: absolute' para a imagem de fundo */}
+            <img src={logoImage} className='scale-200 mt-52' style={{ position: 'absolute', top: '0' }} /> {/* Mantenha 'position: absolute' para a imagem de fundo */}
             <div className='w-screen h-screen flex justify-center items-center relative'>
                 <div className='text-center w-full max-w-md rounded-[30px] bg-white p-4 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'> 
                     <h1 className='text-3xl text-blue-950 font-roboto font-bold mb-12'>Bem-vindo ao StudHelp!</h1>
