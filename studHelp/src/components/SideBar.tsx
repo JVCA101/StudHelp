@@ -49,7 +49,7 @@ function SideBar() {
             <div
                 className={`${
                     open ? "w-1/2 md:w-[40%] min-[1200px]:w-[25%]" : "w-[96px]"
-                } duration-1000 h-screen bg-gradient-to-b from-teal-100 via-teal-200 to-teal-50 relative`}
+                } duration-1000 h-screen bg-gradient-to-b from-blue-400  via-blue-500  to-blue-200 relative`}
             >
                 <img
                     src="./src/assets/right-arrow-angle 2.svg"
@@ -114,7 +114,7 @@ function SideBar() {
                         }`}
                     />
                     <h1
-                        className={`origin-left font-ight left-3  text-2xl px-3 opacity-40 ${
+                        className={`origin-left font-ight left-3  text-2xl px-3 opacity-70 ${
                             !open && "hidden"
                         }`}
                     >

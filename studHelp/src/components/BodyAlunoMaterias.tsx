@@ -6,13 +6,17 @@ function HeaderAluno(){
         <div className="font-roboto font-medium">
                 <div className='py-4 hover:overflow-x-scroll'>
                      <h1 className=' mt-4  text-[1.8rem]'>Minhas Disciplinas:</h1>
+                
+                <div className='text-white'>
 
-                    <div className='bg-page-blue w-1/4 h-24 text-[1.5rem] rounded-[90px] mt-7'>
-                    <h1 className='px-8 py-2 text-blue-900'>user.getSubject(0)</h1>
-                    <h1 className='px-8 text-[1.1rem] text-blue-900'>user.getSubject(0).getId()</h1></div>
-                    <div className='bg-page-blue w-1/4 h-24 rounded-[90px] mt-8 text-[1.5rem]'>
-                    <h1 className='px-8 py-2 text-blue-900'>user.getSubject(0)</h1>
-                    <h1 className='px-8 text-[1.1rem] text-blue-900'>user.getSubject(0).getId()</h1></div>
+                <div className='bg-blue-900 w-1/4 h-24 text-[1.5rem] rounded-[90px] mt-7'>
+                    <h1 className='px-8 py-2 '>user.getSubject(0)</h1>
+                    <h1 className='px-8 text-[1.1rem] '>user.getSubject(0).getId()</h1></div>
+                    <div className='bg-blue-900 w-1/4 h-24 rounded-[90px] mt-8 text-[1.5rem]'>
+                    <h1 className='px-8 py-2 '>user.getSubject(0)</h1>
+                    <h1 className='px-8 text-[1.1rem] '>user.getSubject(0).getId()</h1></div>
+                </div>
+                    
                 </div>
                 
 

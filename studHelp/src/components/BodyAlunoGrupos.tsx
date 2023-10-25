@@ -8,7 +8,7 @@ function BodyAlunoGrupos() {
                 Meus Grupos:
             </h1>
         </div>
-        <div className='h-52 rounded-[50px] w-[25%] bg-page-blue text-[1.2rem] text-blue-900'>
+        <div className='h-52 rounded-[50px] w-[25%] bg-blue-900 text-[1.2rem] text-white'>
             <div>
                 <h1 className='flex justify-center items-center relative py-1'>
                     Disciplina: XXXXX <br />
