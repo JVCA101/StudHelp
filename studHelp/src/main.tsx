@@ -12,7 +12,7 @@ import ForumPage from "./pages/ForumPage.tsx";
 import GroupsPage from "./pages/GroupsPage.tsx";
 import DisciplinesPage from "./pages/DisciplinesPage.tsx";
 import LoginPage from "./pages/LoginPage.tsx";
-import Testes from "./pages/Testes.tsx";
+
 
 const router = createBrowserRouter([
     {
@@ -35,10 +35,6 @@ const router = createBrowserRouter([
         path: "forum",
         element:<ForumPage />,
     },
-    {
-        path: "testes",
-        element:<Testes />,
-    }
 ]);
 
 

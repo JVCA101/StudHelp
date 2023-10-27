@@ -14,7 +14,7 @@ function GroupsBody() {
         
         <div className='bg-blue-600 w-[30%] h-[73%] rounded-[40px] left-4 absolute'>
             <div className='relative'>
-                <h1 className='top-[14rem]  text-3xl absolute left-7 text-white hover:text-blue-300 hover:font-medium hover:text-[2.0rem] font-roboto duration-300 cursor-pointer'>
+                <h1 className='top-[14rem]  text-3xl absolute left-7 text-white hover:left-4 hover:text-blue-300 hover:font-medium hover:text-[2.0rem] font-roboto duration-300 cursor-pointer'>
                     Pedir para participar
                 </h1>
             </div>

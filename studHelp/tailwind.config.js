@@ -21,7 +21,7 @@ export default {
       const newUtilities = {};
 
       newUtilities[".scale-200"] = {
-        transform: "scale(2)",
+        transform: "scale(1.7)",
       };
 
       addUtilities(newUtilities, ["responsive", "hover"]);
