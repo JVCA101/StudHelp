@@ -1,6 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
+import PopUpAddDisciplinas from './PopUpAddDisciplinas';
 
-function BodyAlunoMateriasFeitas() {
+const BodyAlunoMateriasFeitas:React.FC = () => {
+
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  
+  const openPopup = () => {
+    setIsPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+  };
+  
   return (
     <div className='font-roboto'>
         <div>
@@ -14,13 +26,13 @@ function BodyAlunoMateriasFeitas() {
                     Nada para ver aqui por enquanto
                 </h1>
                 
-                <h2 className='text-blue-700 text-bold cursor-pointer hover:font-bold'>
+                <h2 onClick={openPopup} className='text-blue-700 text-bold cursor-pointer hover:font-bold'>
                     . Adicionar Disciplinas
                 </h2>
             </div>
 
             <div>
-
+                <PopUpAddDisciplinas isOpen={isPopupOpen} onClose={closePopup} />
             </div>
         </div>    
     </div>
