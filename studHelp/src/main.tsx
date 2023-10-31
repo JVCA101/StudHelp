@@ -14,6 +14,7 @@ import DisciplinesPage from "./pages/DisciplinesPage.tsx";
 import LoginPage from "./pages/LoginPage.tsx";
 
 
+
 const router = createBrowserRouter([
     {
         path: "/",

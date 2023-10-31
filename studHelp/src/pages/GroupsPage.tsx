@@ -3,14 +3,17 @@ import SideBar from '../components/SideBar'
 import SearchDisciplinesHeader from '../components/SearchDisciplinesHeader'
 import CreateGroup from '../components/CreateGroup'
 import GroupsBody from '../components/GroupsBody'
+import {useSideBarProps} from '../../props/SideBarProps.ts'
 
-function GroupsPage() {
+const GroupsPage = () => {
+  const {open, setOpen} = useSideBarProps();
   return (
     <div className="w-screen h-screen">
             <div className="absolute">
-                <SideBar /> 
+                <SideBar open={open} setOpen={setOpen}/> 
             </div>
-            <div className = {`w-[50%] h-screen left-[50%] md:left-[40%] md:w-[60%] min-[1200px]:left-[25%] absolute min-[1200px]:w-[75%] `}>                        
+            <div className = {`h-screen absolute text-blue-950 duration-1000
+      ${open ? " w-[50%] left-[50%] md:left-[40%] md:w-[60%] min-[1200px]:left-[25%]  min-[1200px]:w-[75%]": "w-[92%] left-[96px]" }`}>                        
               <div className='flex w-full'>
                 <div className="w-full sm:w-1/2 md:w-1/3 lg:w-3/4">
                   <SearchDisciplinesHeader />

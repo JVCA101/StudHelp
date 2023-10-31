@@ -1,10 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import React from 'react';
 
-function SideBar() {
-  
-    const [open, setOpen] = useState(true);
 
+interface SideBarProps {
+    open : boolean;
+    setOpen: (open: boolean) => void;
+}
+
+const SideBar = ({open, setOpen}: SideBarProps) =>  {
+  
     const handleClick = (href: string) => {
       window.location.href = href;
     };
@@ -48,7 +52,7 @@ function SideBar() {
         <div className="flex select-none">
             <div
                 className={`${
-                    open ? "w-1/2 md:w-[40%] min-[1200px]:w-[25%]" : "w-[96px]"
+                    open ? "w-[100%] md:w-[40%] min-[1200px]:w-[25%]" : "w-[96px]"
                 } duration-1000 h-screen bg-gradient-to-b from-blue-400  via-blue-500  to-blue-200 relative`}
             >
                 <img
@@ -65,7 +69,7 @@ function SideBar() {
             } ${!open && "scale-[1] w-24 origin-left mt-10"}`}
                     />
                     <h1
-                        className={`origin-left font-medium  max-sm:text-[0rem] sm:text-[2.50rem] left-3 duration-300 py-4 ${
+                        className={`origin-left font-medium  max-sm:text-[0rem] sm:text-[2.50rem] left-3 duration-1000 py-4 ${
                             !open && "scale-0"
                         }`}
                     >
