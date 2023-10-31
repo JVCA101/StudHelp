@@ -7,6 +7,7 @@ import {useSideBarProps} from '../../props/SideBarProps.ts'
 
 const GroupsPage = () => {
   const {open, setOpen} = useSideBarProps();
+  document.title = "Grupos de Estudo - StudHelp";
   return (
     <div className="w-screen h-screen">
             <div className="absolute">

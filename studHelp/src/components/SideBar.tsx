@@ -28,25 +28,7 @@ const SideBar = ({open, setOpen}: SideBarProps) =>  {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    const setPageTitle = (href: string) => {
-      // Define the title based on the href
-      switch (href) {
-          case "aluno":
-              document.title = "Página do Aluno - StudHelp";
-              break;
-          case "disciplinas":
-              document.title = "Disciplinas - StudHelp";
-              break;
-          case "grupos":
-              document.title = "Grupos de Estudo - StudHelp";
-              break;
-          case "forum":
-              document.title = "Fórum - StudHelp";
-              break;
-          default:
-              document.title = "StudHelp";
-      }
-  };
+
 
     return (
         <div className="flex select-none">
@@ -80,7 +62,7 @@ const SideBar = ({open, setOpen}: SideBarProps) =>  {
                     </h1>
                 </div>
                 <div
-                    className={`w-screen h-[1px] mt-7 bg-black opacity-20 ${!open && "-mt-2"} `}
+                    className={`w-screen h-[1px] mt-7 bg-black opacity-20 ${!open && "-mt-4"} duration-1000  `}
                 ></div>
                 <ul className="">
                     {Menus.map((menu, index) => (
@@ -88,7 +70,7 @@ const SideBar = ({open, setOpen}: SideBarProps) =>  {
                             key={index}
                             className={`text-sm flex cursor-pointer p-2 hover:bg-purple-50 `}
                             onClick={() => {handleClick(menu.href)
-                                            setPageTitle(menu.href);} 
+                                            } 
                                           }
                         >
                             <img src="./src/assets/right-arrow-angle 2.svg" className={` duration-1000 ${!open && "hidden"}`} />

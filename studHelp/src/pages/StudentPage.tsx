@@ -10,7 +10,9 @@ import {useSideBarProps} from '../../props/SideBarProps.ts'
 const StudentPage = () => {
 
   const {open, setOpen} = useSideBarProps();
+  document.title = "Página do Aluno - StudHelp";
   return (
+    
     <div className="w-screen h-screen">
       <title>Aluno  </title>
       <div className="absolute">

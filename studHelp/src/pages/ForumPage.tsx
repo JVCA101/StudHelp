@@ -4,6 +4,7 @@ import {useSideBarProps} from '../../props/SideBarProps.ts'
 
 function ForumPage() {
   const {open, setOpen} = useSideBarProps();
+  document.title = "Fórum - StudHelp";
   return (
       <div className="w-screen h-screen">
               <div className="absolute w-screen">

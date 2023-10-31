@@ -7,6 +7,7 @@ import {useSideBarProps} from '../../props/SideBarProps.ts'
 
 const DisciplinesPage = () => {
   const {open, setOpen} = useSideBarProps();
+  document.title = "Disciplinas - StudHelp";
   return(
         <div className="w-screen h-screen">
                 <div className="absolute w-screen">
