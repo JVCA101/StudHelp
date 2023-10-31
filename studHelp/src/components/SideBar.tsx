@@ -52,7 +52,7 @@ const SideBar = ({open, setOpen}: SideBarProps) =>  {
         <div className="flex select-none">
             <div
                 className={`${
-                    open ? "w-[100%] md:w-[40%] min-[1200px]:w-[25%]" : "w-[96px]"
+                    open ? "w-[100%] md:w-[40%] min-[1200px]:w-[25%]" : "w-[10%]"
                 } duration-1000 h-screen bg-gradient-to-b from-blue-400  via-blue-500  to-blue-200 relative`}
             >
                 <img
@@ -66,7 +66,7 @@ const SideBar = ({open, setOpen}: SideBarProps) =>  {
                     <img
                         src="./src/assets/logo.png"
                         className={`duration-500 w-32 py-2 px-1 
-            } ${!open && "scale-[1] w-24 origin-left mt-10"}`}
+            } ${!open && "scale-[0.8] left-3 relative w-24 origin-left mt-10"}`}
                     />
                     <h1
                         className={`origin-left font-medium  max-sm:text-[0rem] sm:text-[2.50rem] left-3 duration-1000 py-4 ${
@@ -80,7 +80,7 @@ const SideBar = ({open, setOpen}: SideBarProps) =>  {
                     </h1>
                 </div>
                 <div
-                    className={`w-screen h-[1px] mt-7 bg-black opacity-20 ${!open && "mt-4"} `}
+                    className={`w-screen h-[1px] mt-7 bg-black opacity-20 ${!open && "-mt-2"} `}
                 ></div>
                 <ul className="">
                     {Menus.map((menu, index) => (
@@ -95,7 +95,7 @@ const SideBar = ({open, setOpen}: SideBarProps) =>  {
                             <img
                                 className={`w-16 scale-75 px-2  py-4 duration-1000  ${
                                     open && "rotate-[360deg]"
-                                } ${!open && "scale-[1.0]"}`}
+                                } ${!open && "scale-[1.0] left-6 relative"}`}
                                 src={`./src/assets/${menu.src}.svg`}
                             />
 
@@ -114,7 +114,7 @@ const SideBar = ({open, setOpen}: SideBarProps) =>  {
                     <img
                         src="./src/assets/about 1.svg"
                         className={`scale-[1.3] duration-500 ${open && "rotate-[360deg]"} ${
-                            !open && "scale-[0.69] py-2 "
+                            !open && "scale-[0.69] py-2 relative left-6"
                         }`}
                     />
                     <h1
