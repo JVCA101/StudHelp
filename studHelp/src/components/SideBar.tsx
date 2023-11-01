@@ -32,6 +32,7 @@ const SideBar = ({open, setOpen}: SideBarProps) =>  {
 
     return (
         <div className="flex select-none">
+
             <div
                 className={`${
                     open ? "w-[100%] md:w-[40%] min-[1200px]:w-[25%]" : "w-[10%]"
@@ -62,7 +63,7 @@ const SideBar = ({open, setOpen}: SideBarProps) =>  {
                     </h1>
                 </div>
                 <div
-                    className={`w-screen h-[1px] mt-7 bg-black opacity-20 ${!open && "-mt-4"} duration-1000  `}
+                    className={`w-screen h-[1px] mt-7 bg-black opacity-20 ${!open && "-mt-2"} duration-1000  `}
                 ></div>
                 <ul className="">
                     {Menus.map((menu, index) => (

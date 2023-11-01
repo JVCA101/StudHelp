@@ -43,18 +43,17 @@ const PopupCriarGrupo: React.FC<PopupProps> = ({ isOpen, onClose }) => {
             </div>
 
             <div className="flex rounded-[30px] h-12 text-blue-950">
-              <button onClick={onClose} className="w-1/2  hover:bg-green-600 border hover:border-black hover:text-white rounded-bl-[30px]">
-                Criar Grupo
+              <button onClick={onClose} className="w-1/2  hover:bg-red-600 border hover:border-black hover:text-white rounded-bl-[30px]">
+                Cancelar
                 
               </button>
               <button
-                className="w-1/2 text-center rounded-br-[30px] hover:border-black border hover:bg-red-600 hover:text-white"
+                className="w-1/2 text-center rounded-br-[30px] hover:border-black border hover:bg-green-600 hover:text-white"
                 onClick={onClose}
               >
-                Cancelar
+                Criar Grupo
               </button>
             </div>
-            
           </div>
         </div>
       </div>
