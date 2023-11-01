@@ -1,5 +1,8 @@
 import { useEffect } from "react";
 import React from 'react';
+import{
+    Link,
+} from "react-router-dom"
 
 
 interface SideBarProps {
@@ -8,16 +11,17 @@ interface SideBarProps {
 }
 
 const SideBar = ({open, setOpen}: SideBarProps) =>  {
-  
+
+
     const handleClick = (href: string) => {
       window.location.href = href;
     };
 
     const Menus = [
-        { title: "Página do Aluno", src: "graduation 1", href: "aluno" },
-        { title: "Disciplinas", src: "book 1", href: "disciplinas" },
-        { title: "Grupos de Estudo", src: "reading-group 1", href: "grupos" },
-        { title: "Fórum", src: "chat 1", href: "forum" },
+        { title: "Página do Aluno", src: "graduation 1", href: "/aluno" },
+        { title: "Disciplinas", src: "book 1", href: "/disciplinas" },
+        { title: "Grupos de Estudo", src: "reading-group 1", href: "/grupos" },
+        { title: "Fórum", src: "chat 1", href: "/forum" },
     ];
 
     useEffect(() => {
@@ -70,10 +74,8 @@ const SideBar = ({open, setOpen}: SideBarProps) =>  {
                         <li
                             key={index}
                             className={`text-sm flex cursor-pointer p-2 hover:bg-purple-50 `}
-                            onClick={() => {handleClick(menu.href)
-                                            } 
-                                          }
                         >
+                            <Link to={menu.href} >
                             <img src="./src/assets/right-arrow-angle 2.svg" className={` duration-1000 ${!open && "hidden"}`} />
                             <img
                                 className={`w-16 scale-75 px-2  py-4 duration-1000  ${
@@ -89,6 +91,7 @@ const SideBar = ({open, setOpen}: SideBarProps) =>  {
                             >
                                 {menu.title}
                             </span>
+                            </Link>
                         </li>
                     ))}
                 </ul>
