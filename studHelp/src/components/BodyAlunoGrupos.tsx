@@ -1,5 +1,3 @@
-import React from 'react'
-
 function BodyAlunoGrupos() {
   return (
     <div className='h-auto'>

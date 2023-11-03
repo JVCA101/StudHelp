@@ -1,12 +1,9 @@
-// Popup.tsx
-import React from "react";
-
 interface PopupProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-const PopupCriarGrupo: React.FC<PopupProps> = ({ isOpen, onClose }) => {
+const PopupCriarGrupo: React.FC<PopupProps> = ({ isOpen, onClose }: PopupProps) => {
   if (!isOpen) return null;
 
   return (

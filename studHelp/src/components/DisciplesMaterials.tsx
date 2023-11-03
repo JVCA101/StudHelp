@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-
+import { useState } from 'react'
 
 function DisciplesMaterials() {
     const [listOpen, setListOpen] = useState(false);
