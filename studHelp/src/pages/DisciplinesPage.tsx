@@ -5,7 +5,7 @@ import DisciplinesBody from '../components/DisciplinesBody'
 import DisciplesMaterials from '../components/DisciplesMaterials'
 import PageComponents from '../components/PageComponents'
 import { useSelector } from 'react-redux';
-import { AppState } from '../../state';
+import { AppState } from '../../props/state';
 
 const DisciplinesPage = () => {
   const open = useSelector((state: AppState) => state.open);

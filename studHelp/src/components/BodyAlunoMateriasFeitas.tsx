@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import PopUpAddDisciplinas from './PopUpAddDisciplinas';
 
 const BodyAlunoMateriasFeitas:React.FC = () => {

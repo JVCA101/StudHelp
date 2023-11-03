@@ -1,4 +1,3 @@
-import React from 'react'
 import SideBar from '../components/SideBar'
 import HeaderAluno from '../components/HeaderAluno'
 import BodyAlunoMaterias from '../components/BodyAlunoMaterias'
@@ -6,7 +5,7 @@ import BodyAlunoGrupos from '../components/BodyAlunoGrupos'
 import BodyAlunoMateriasFeitas from '../components/BodyAlunoMateriasFeitas'
 import PageComponents from '../components/PageComponents'
 import { useSelector } from 'react-redux';
-import { AppState } from '../../state';
+import { AppState } from '../../props/state';
 
 const StudentPage = () => {
 

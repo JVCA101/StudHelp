@@ -1,6 +1,3 @@
-import React from 'react';
-
-
 function HeaderAluno(){
     return (
         <div className="font-roboto font-medium">

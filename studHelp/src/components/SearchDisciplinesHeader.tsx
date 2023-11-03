@@ -1,5 +1,3 @@
-import React from 'react'
-
 function SearchDisciplinesHeader() {
   return (
     <div className='mt-[90px] px-8 font-roboto'>

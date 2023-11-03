@@ -1,11 +1,10 @@
-import React from 'react'
 import SideBar from '../components/SideBar'
 import SearchDisciplinesHeader from '../components/SearchDisciplinesHeader'
 import CreateGroup from '../components/CreateGroup'
 import GroupsBody from '../components/GroupsBody'
 import PageComponents from '../components/PageComponents'
 import { useSelector } from 'react-redux';
-import { AppState } from '../../state';
+import { AppState } from '../../props/state';
 
 
 
@@ -30,7 +29,7 @@ const GroupsPage = () => {
               </div>
               
               <div className='h-[70%]'>
-              <GroupsBody /> 
+              <GroupsBody open={open}/> 
               </div>
             </PageComponents>
                                           

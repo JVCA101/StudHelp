@@ -1,6 +1,4 @@
-import React from 'react';
 import logoImage from '../assets/logo.png'; // Ajuste o caminho conforme a estrutura do seu projeto
-
 function LoginPage() {
     const handleClick = () => {
         window.location.href = "/aluno";

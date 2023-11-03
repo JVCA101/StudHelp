@@ -1,9 +1,9 @@
-import React from 'react'
+
 import SideBar from '../components/SideBar'
 
 import PageComponents from '../components/PageComponents.tsx';
 import { useSelector } from 'react-redux';
-import { AppState } from '../../state';
+import { AppState } from '../../props/state.ts';
 
 
 
