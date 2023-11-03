@@ -1,6 +1,6 @@
 // server/index.ts
 import express from 'express';
-import connect from './db.js';
+import {selectStudents} from './db.js';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -14,4 +14,10 @@ app.listen(port, () => {
   console.log("Press Ctrl+C to quit.");
 });
 
-await connect();
+(async () => {
+  console.log('Começou!');
+
+  console.log('SELECT * FROM student_tb');
+  const students = await selectStudents();
+  console.log(students);
+})();

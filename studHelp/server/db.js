@@ -1,7 +1,7 @@
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 
-async function connect(){
+export async function connect(){
     if(global.connection && global.connection.state !== 'disconnected')
         return global.connection;
  
@@ -13,4 +13,8 @@ async function connect(){
     return connection;
 }
 
-export default connect;
+export async function selectStudents(){
+    const conn = await connect();
+    const [rows] = await conn.query('SELECT * FROM student_tb;');
+    return rows;
+}
