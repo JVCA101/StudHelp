@@ -4,7 +4,7 @@ interface Props {
 
 function GroupsBody({ open }: Props) {
   return (
-    <div className="mt-8  relative duration-1000 font-roboto">
+    <div className="mt-8  relative font-roboto">
       <div>
         <h1 className="text-4xl font-roboto px-8">Grupo da Disciplina:</h1>
       </div>
@@ -12,34 +12,34 @@ function GroupsBody({ open }: Props) {
         <div className="px-8 ">
           <div
             className={`bg-blue-900 ${
-              open ? "w-[31%]" : "w-[27%]"
+              open ? "w-[26%]" : "w-[20%]"
             } h-[74%] rounded-[40px] absolute top-3`}
           ></div>
 
           <div
             className={`bg-blue-600  ${
-              open ? "w-[30%]" : "w-[26%]"
+              open ? "w-[25%]" : "w-[19%]"
             } h-[73%] rounded-[40px] left-12 absolute`}
           >
             <div className="relative">
               <h1
                 className={`top-[14rem]  ${
                   open ? "text-3xl" : "text-[1.6rem]"
-                } absolute left-7 text-white hover:left-4 hover:text-blue-300 hover:font-medium hover:text-[2.0rem] font-roboto duration-300 cursor-pointer`}
+                } absolute left-[35%] text-white  hover:text-blue-300  hover:font-medium hover:text-[2.0rem] font-roboto duration-300 cursor-pointer`}
               >
-                Pedir para participar
+                Entrar
               </h1>
             </div>
           </div>
 
           <div
             className={`bg-blue-400 ${
-              open ? "w-[30%]" : "w-[26%]"
+              open ? "w-[25%]" : "w-[19%]"
             } h-[55%]   rounded-[40px] absolute left-12 `}
           >
             <p
               className={`${
-                open ? "text-2xl" : "text-[1.4rem]"
+                open ? "text-2xl" : "text-[1.2rem]"
               } font-roboto text-white p-7 duration-0`}
             >
               Admin: user.getNome() <br />

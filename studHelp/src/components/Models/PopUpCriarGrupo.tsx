@@ -38,7 +38,7 @@ const PopupCriarGrupo: React.FC<PopupProps> = ({
                   <InputModel type="text" placeholder="Descrição"></InputModel>
                 </div>
                 <div className="mb-4">
-                  <InputModel type="data" placeholder="Horário"></InputModel>
+                  <InputModel type="time" placeholder="Horário"></InputModel>
                 </div>
                 <div className="mb-4">
                   <select

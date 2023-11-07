@@ -84,14 +84,16 @@ export const SideBarModel = ({
                     className={`duration-1000 ${!open && "hidden"}`}
                   />
                   <img
-                    className={`w-16 scale-75 px-2 py-4 duration-1000 ${
+                    className={`w-16 scale-75 origin-center  py-4 duration-1000 ${
                       open && "rotate-[360deg]"
-                    } ${!open && "scale-[1.0] left-6 relative"}`}
+                    } ${
+                      !open && "scale-[1.0] origin-center relative left-[20%]"
+                    }`}
                     src={`./src/assets/${menu.src}.svg`}
                   />
 
                   <span
-                    className={`max-sm:text-[1.5rem] text-[1.7rem] mt-[29px] font-medium origin-center duration-5000 ${
+                    className={`max-sm:text-[1.5rem] text-[1.7rem] mt-[38px] font-medium origin-center duration-5000 ${
                       !open && "hidden opacity-0"
                     }`}
                   >
