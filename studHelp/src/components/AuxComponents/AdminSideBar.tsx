@@ -19,7 +19,7 @@ export const AdminSideBar: React.FC = () => {
   return (
     <SideBarModel
       open={open}
-      textHead={"Bem vindo,"}
+      textHead={"Bem vindo"}
       subText={"Gabriel Oliveira Quaresma"}
       subTextSize={"sm"}
       Menus={Menus}

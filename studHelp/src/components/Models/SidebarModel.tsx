@@ -34,7 +34,7 @@ export const SideBarModel = ({
       : "text-base";
 
   return (
-    <div className="flex select-none text-blue-950 font-roboto">
+    <div className="flex select-none text-blue-900 font-roboto">
       <div
         className={`${
           open ? "w-[100%] md:w-[40%] min-[1200px]:w-[25%]" : "w-[10%]"
@@ -51,21 +51,23 @@ export const SideBarModel = ({
           <img
             src="./src/assets/logo.png"
             className={`duration-500 w-32 py-2 px-1 ${
-              !open && "scale-[0.8] left-3 relative w-24 origin-left mt-10"
+              !open && " left-3 relative w-24 origin-left py-7"
             }`}
           />
-          <h1
-            className={`origin-left font-medium max-sm:text-[0rem] sm:text-[2.50rem] left-3 duration-1000 py-4 ${
-              !open && "hidden"
-            }`}
-          >
-            {textHead}
-            <h2
-              className={`opacity-100 max-sm:text-[0rem] ${fontSizeClass} px-1 py-2`}
+          <div className="">
+            <h1
+              className={`origin-left font-medium max-sm:text-[0rem] sm:text-[2.50rem] left-3 duration-[500ms] py-4 ${
+                !open && "opacity-0 -translate-y-56 overflow-hidden"
+              }`}
             >
-              {subText}
-            </h2>
-          </h1>
+              {textHead}
+              <h2
+                className={`opacity-100 max-sm:text-[0rem] ${fontSizeClass} px-1 py-2 absolute`}
+              >
+                {subText}
+              </h2>
+            </h1>
+          </div>
         </div>
         <div
           className={`w-screen h-[1px] bg-black opacity-20 ${
@@ -89,8 +91,8 @@ export const SideBarModel = ({
                   />
 
                   <span
-                    className={`max-sm:text-[1.5rem] text-[1.7rem] mt-[29px] font-medium origin-center duration-1000 ${
-                      !open && "hidden"
+                    className={`max-sm:text-[1.5rem] text-[1.7rem] mt-[29px] font-medium origin-center duration-5000 ${
+                      !open && "hidden opacity-0"
                     }`}
                   >
                     {menu.title}

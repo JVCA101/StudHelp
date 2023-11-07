@@ -1,3 +1,5 @@
+import InputModel from "./InputModel";
+
 interface PopupProps {
   isOpen: boolean;
   onClose: () => void;
@@ -21,46 +23,39 @@ const PopupCriarGrupo: React.FC<PopupProps> = ({
               </h1>
               <div className="caret-blue-600">
                 <div className="mb-4">
-                  <input
+                  <InputModel
                     type="text"
                     placeholder="Código da Disciplina"
-                    className="border border-blue-950 rounded-lg text-blue-950 placeholder-blue-950 focus:outline-none focus:ring w-full block p-2"
-                  />
+                  ></InputModel>
                 </div>
                 <div className="mb-4">
-                  <input
+                  <InputModel
                     type="number"
-                    placeholder="Numero de Membros"
-                    className="border border-blue-950 rounded-lg text-blue-950 placeholder-blue-950 focus:outline-none focus:ring w-full block p-2"
-                  />
+                    placeholder="Número de Membros"
+                  ></InputModel>
                 </div>
                 <div className="mb-4">
-                  <input
-                    type="text"
-                    placeholder="Descrição"
-                    className="border border-blue-950 rounded-lg text-blue-950 placeholder-blue-950 focus:outline-none focus:ring w-full block p-2"
-                  />
+                  <InputModel type="text" placeholder="Descrição"></InputModel>
                 </div>
                 <div className="mb-4">
-                  <input
-                    type="time"
-                    placeholder=""
-                    className="border border-blue-950 rounded-lg text-blue-950 placeholder-blue-950 focus:outline-none focus:ring w-full block p-2"
-                  />
+                  <InputModel type="data" placeholder="Horário"></InputModel>
                 </div>
                 <div className="mb-4">
-                  <input
-                    type="text"
-                    placeholder="Dia"
+                  <select
+                    name="diaDaSemana"
                     className="border border-blue-950 rounded-lg text-blue-950 placeholder-blue-950 focus:outline-none focus:ring w-full block p-2"
-                  />
+                  >
+                    <option value="domingo">Domingo</option>
+                    <option value="segunda">Segunda-feira</option>
+                    <option value="terca">Terça-feira</option>
+                    <option value="quarta">Quarta-feira</option>
+                    <option value="quinta">Quinta-feira</option>
+                    <option value="sexta">Sexta-feira</option>
+                    <option value="sabado">Sábado</option>
+                  </select>
                 </div>
                 <div className="mb-4">
-                  <input
-                    type="text"
-                    placeholder="Local"
-                    className="border border-blue-950 rounded-lg text-blue-950 placeholder-blue-950 focus:outline-none focus:ring w-full block p-2"
-                  />
+                  <InputModel type="text" placeholder="Local"></InputModel>
                 </div>
               </div>
             </div>

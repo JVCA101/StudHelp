@@ -1,3 +1,5 @@
+import InputModel from "./InputModel";
+
 interface PopupProps {
   isOpen: boolean;
   onClose: () => void;
@@ -23,11 +25,10 @@ const PopUpAddDisciplinas: React.FC<PopupProps> = ({
             <div className="mt-8 mb-8 px-4">
               <h1 className="text-2xl px-2">Adicionar Disciplinas</h1>
               <div className="flex gap-x-1 mt-4">
-                <input
+                <InputModel
                   type="text"
-                  placeholder="Insira código da disciplina"
-                  className='text-[1.2rem] border px-2 border-black rounded-lg focus:outline-none focus:ring w-full block p-2"/>'
-                />
+                  placeholder="Insira o Código da Disciplina"
+                ></InputModel>
               </div>
             </div>
           </div>

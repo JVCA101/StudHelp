@@ -19,7 +19,7 @@ const StudentPage = () => {
       </div>
       <PageComponents open={open}>
         <HeaderAluno open={open} />
-        <div className={`overflow-y-scroll px-8 h-[74%] mt-1`}>
+        <div className={`overflow-y-scroll px-8 h-[80%] mt-1`}>
           <BodyAlunoMaterias />
           <BodyAlunoGrupos />
           <BodyAlunoMateriasFeitas />

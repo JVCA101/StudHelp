@@ -4,7 +4,7 @@ interface Props {
 
 function GroupsBody({ open }: Props) {
   return (
-    <div className="mt-8  relative duration-1000">
+    <div className="mt-8  relative duration-1000 font-roboto">
       <div>
         <h1 className="text-4xl font-roboto px-8">Grupo da Disciplina:</h1>
       </div>
