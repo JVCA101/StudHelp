@@ -2,11 +2,22 @@
 
 import { Estudante } from "./Usuario";
 
+enum DiaSemana
+{
+    DOMINGO,
+    SEGUNDA,
+    TERCA,
+    QUARTA,
+    QUINTA,
+    SEXTA,
+    SABADO
+}
+
 export class GrupoEstudo
 {
     readonly id: string;
     readonly disciplina: string;
-    public diaSemana: string;
+    public diaSemana: DiaSemana;
     public estudanteAdmin: Estudante;
     public estudantes: Array<Estudante>;
 
@@ -14,18 +25,20 @@ export class GrupoEstudo
     public addEstudante(idEstudante: number): void
     {
         // TODO  Adiciona estudante
-        //? Apenas estudanteAdmin pode adicionar estudante?
+        // Estudante estudante = getEstudanteByID(idEstudante);
+        // this.estudantes.push(estudante);
     }
 
     public removeEstudante(idEstudante: number): void
     {
         // TODO  Remove estudante
-        //? Apenas estudanteAdmin pode remover estudante?
+        // Proprio estudante ou estudanteAdmin pode remover estudante
+        // estudante = getEstudante(idEstudante);
+        // this.estudantes.splice(this.estudante, 1);
     }
 
-    public deleteGrupo(): void //? basicamente destructor?
+    public deleteGrupo(): void
     {
         // TODO  Remove grupo
-        //? Apenas estudanteAdmin pode remover grupo?
     }
 }
