@@ -1,6 +1,6 @@
 //* Disciplina, Turma, MaterialApoio
 
-enum Dificuldade  //? adicionar mais opcoes?
+enum Dificuldade
 {
     FACIL,
     MEDIO,

@@ -12,18 +12,10 @@ export class Discussao
     readonly data: Date;  // nao esta no diagrama
     public descricao: string;
 
-    public constructor(criador: Usuario, disciplina: Disciplina, titulo: string, descricao: string)
-    {
-        this.criador = criador;
-        this.disciplina = disciplina;
-        this.titulo = titulo;
-        this.descricao = descricao;
-        this.data = new Date();
-    }
-
     public addComentario(comentario: Comentario): void
     {
         // TODO  Adiciona comentario
+        this.comentarios.push(comentario);
     }
 
     public deleteComentario(login: string): void //* outro parametro possivel, comentario: Comentario
@@ -32,7 +24,7 @@ export class Discussao
         //! DEVE SER USADO APENAS POR ADMINISTRADOR
     }
 
-    public deleteDiscussao(login: string): void  //? basicamente destructor?
+    public deleteDiscussao(login: string): void
     {
         // TODO  Remove discussao
         //! DEVE SER USADO APENAS POR ADMINISTRADOR
