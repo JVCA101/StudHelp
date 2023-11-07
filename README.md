@@ -11,3 +11,5 @@
 [Diagrama de Atividades](https://drive.google.com/file/d/1EM37mSmbwUEZ8taNrbCIAoocpGgSLLxh/view?usp=sharing)
 
 [Diagrama de Classes](https://drive.google.com/file/d/1COMMn51CtqPTQCkwS2m8_-lHmjkT6nzS/view?usp=sharing)
+
+[Diagrama de Transicao de Estados](https://drive.google.com/file/d/1R1DBYAIps4Vf1C5A2FaG0U35RVjHycj2/view?usp=sharing)
