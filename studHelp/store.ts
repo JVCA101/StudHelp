@@ -13,7 +13,7 @@ export const toggleSidebar = (): Action => ({ type: TOGGLE_SIDEBAR });
 
 // Reducer
 const initialState: State = {
-  open: false,
+  open: true,
 };
 
 const sidebarReducer = (state = initialState, action: Action): State => {
