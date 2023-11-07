@@ -1,6 +1,6 @@
 function HeaderAluno() {
   return (
-    <div className="font-roboto font-medium">
+    <div className="font-roboto font-medium text-blue-900">
       <div className="py-4 hover:overflow-x-scroll">
         <h1 className=" mt-4  text-[1.8rem]">Minhas Disciplinas:</h1>
 

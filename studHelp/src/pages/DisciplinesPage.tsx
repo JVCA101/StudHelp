@@ -12,7 +12,7 @@ const DisciplinesPage = () => {
 
   document.title = "Disciplinas - StudHelp";
   return (
-    <div className="w-screen h-screen">
+    <div className="w-screen h-screen ">
       <div className="absolute w-screen">
         <SideBar />
       </div>

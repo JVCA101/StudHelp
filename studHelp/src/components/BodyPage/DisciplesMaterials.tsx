@@ -8,7 +8,7 @@ function DisciplesMaterials() {
   };
 
   return (
-    <div className="mt-20 px-8">
+    <div className="mt-20 px-8 text-blue-900">
       <div
         className="flex gap-x-8 hover:font-bold cursor-pointer"
         onClick={toggleList}
