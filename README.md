@@ -17,3 +17,5 @@
 [Diagrama de Transicao de Estados da classe GrupoEstudo](https://drive.google.com/file/d/1CYBKMnh_v9zTAcMEvj-lkiUgbUql6YDE/view?usp=sharing)
 
 [Diagrama de Transicao de Estados da classe Turma](https://drive.google.com/file/d/1mUBxnhlHOOXz_JeljmE3MvKwctEw__8y/view?usp=sharing)
+
+[Diagrama de Transicao de Estados da classe Discussao](https://drive.google.com/file/d/1lqXsvic_4OYDC2A_8gtx0ZoxU5F_BYAH/view?usp=sharing)
