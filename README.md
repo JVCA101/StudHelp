@@ -15,3 +15,5 @@
 [Diagrama de Transicao de Estados da classe Estudante](https://drive.google.com/file/d/1R1DBYAIps4Vf1C5A2FaG0U35RVjHycj2/view?usp=sharing)
 
 [Diagrama de Transicao de Estados da classe GrupoEstudo](https://drive.google.com/file/d/1CYBKMnh_v9zTAcMEvj-lkiUgbUql6YDE/view?usp=sharing)
+
+[Diagrama de Transicao de Estados da classe Turma](https://drive.google.com/file/d/1mUBxnhlHOOXz_JeljmE3MvKwctEw__8y/view?usp=sharing)
