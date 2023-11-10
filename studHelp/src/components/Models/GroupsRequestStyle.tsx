@@ -34,8 +34,10 @@ export const GroupsRequestStyle = ({
             <div className="">
               <h1
                 className={`  ${
-                  open ? "text-3xl top-[15rem]" : "text-[1.6rem] top-[12.1rem]"
-                }  left-[35%]  text-white  hover:text-blue-300  relative hover:font-medium hover:text-[2.0rem] font-roboto duration-300 cursor-pointer`}
+                  open ? "text-3xl top-[15rem]" : "text-[1.4rem] top-[12.1rem]"
+                }  left-[35%]  text-white  hover:text-blue-300  relative hover:font-medium ${
+                  open ? "hover:text-[2.0rem]" : "hover:text-[1.5rem]"
+                } font-roboto duration-300 cursor-pointer`}
               >
                 Entrar
               </h1>
