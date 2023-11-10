@@ -41,11 +41,11 @@ function GroupsBody({ open }: Props) {
   ];
 
   return (
-    <div className="mt-8 relative font-roboto h-full">
+    <div className="relative font-roboto h-full">
       <div>
-        <h1 className="text-4xl font-roboto px-8">Grupo da Disciplina:</h1>
+        <h1 className="text-4xl font-roboto px-4">Grupo da Disciplina:</h1>
       </div>
-      <div className="relative h-full mt-10 overflow-y-scroll">
+      <div className="relative h-full mt-10 ">
         <div className="flex-wrap flex gap-y-20">
           {Groups.map((group, index) => (
             <div key={index} className="flex">

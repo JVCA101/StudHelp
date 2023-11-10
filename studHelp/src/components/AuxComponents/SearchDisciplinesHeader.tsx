@@ -2,7 +2,7 @@ import InputModel from "../Models/InputModel";
 
 function SearchDisciplinesHeader() {
   return (
-    <div className="mt-[90px] px-8 font-roboto">
+    <div className="mt-[100px] -top-2 relative px-8 font-roboto">
       <div>
         <h1 className="text-2xl font-roboto select-none">Buscar Disciplina:</h1>
       </div>

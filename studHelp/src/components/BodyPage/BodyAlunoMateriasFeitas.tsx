@@ -15,7 +15,7 @@ const BodyAlunoMateriasFeitas: React.FC = () => {
   return (
     <div className="font-roboto text-blue-900">
       <div>
-        <h1 className="mt-10 text-[1.8rem]">Disciplinas Aprovadas:</h1>
+        <h1 className="text-[1.8rem]">Disciplinas Aprovadas:</h1>
       </div>
       <div className="mt-10">
         <div className="flex justify-center items-center text-[1.1rem] -mt-6">

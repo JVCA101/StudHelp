@@ -18,10 +18,10 @@ function HeaderAluno() {
 
   return (
     <div className="font-roboto font-medium text-blue-900 w-full">
-      <div className="py-4 ">
-        <h1 className=" mt-4  text-[1.8rem]">Minhas Disciplinas:</h1>
+      <div className="">
+        <h1 className="text-[1.8rem]">Minhas Disciplinas:</h1>
 
-        <div className="hover:overflow-x-scroll py-4">
+        <div className="overflow-x-scroll py-4">
           <div className="flex gap-x-32">
             {Menus.map(
               (menu, index) =>

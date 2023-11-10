@@ -31,7 +31,7 @@ function BodyAlunoGrupos() {
   return (
     <div className="h-auto text-blue-900">
       <div>
-        <h1 className="mt-10 text-[1.8rem] font-roboto  font-medium">
+        <h1 className=" text-[1.8rem] font-roboto  font-medium">
           Meus Grupos:
         </h1>
       </div>

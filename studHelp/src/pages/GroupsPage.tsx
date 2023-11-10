@@ -5,13 +5,14 @@ import GroupsBody from "../components/BodyPage/GroupsBody";
 import PageComponents from "../components/Models/PageComponents";
 import { useSelector } from "react-redux";
 import { AppState } from "../../props/state";
+import { ComponentStyle } from "../components/Headers/ComponentStyle";
 
 const GroupsPage = () => {
   const open = useSelector((state: AppState) => state.open);
 
   document.title = "Grupos de Estudo - StudHelp";
   return (
-    <div className="w-screen h-screen">
+    <div className="w-screen h-screen bg-gray-100">
       <div className="absolute">
         <SideBar />
       </div>
@@ -25,8 +26,10 @@ const GroupsPage = () => {
           </div>
         </div>
 
-        <div className="h-[70%]">
-          <GroupsBody open={open} />
+        <div className="h-[80%] px-4 overflow-y-scroll">
+          <ComponentStyle>
+            <GroupsBody open={open} />
+          </ComponentStyle>
         </div>
       </PageComponents>
     </div>
