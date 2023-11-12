@@ -7,6 +7,7 @@ import PageComponents from "../components/Models/PageComponents";
 import { useSelector } from "react-redux";
 import { AppState } from "../../props/state";
 import { ComponentStyle } from "../components/Headers/ComponentStyle";
+import BodyStyle from "../components/Models/BodyStyle";
 
 const StudentPage = () => {
   const open = useSelector((state: AppState) => state.open);
@@ -20,7 +21,7 @@ const StudentPage = () => {
       </div>
       <PageComponents open={open}>
         <HeaderAluno open={open} />
-        <div className={`overflow-y-scroll  px-4 h-[80%] mt-1`}>
+        <BodyStyle>
           <ComponentStyle>
             <BodyAlunoMaterias />
           </ComponentStyle>
@@ -30,7 +31,7 @@ const StudentPage = () => {
           <ComponentStyle>
             <BodyAlunoMateriasFeitas />
           </ComponentStyle>
-        </div>
+        </BodyStyle>
       </PageComponents>
     </div>
   );

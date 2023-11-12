@@ -1,12 +1,12 @@
-import React from "react";
 import SideBar from "../components/AuxComponents/SideBar";
-import SearchDisciplinesHeader from "../components/AuxComponents/SearchDisciplinesHeader";
 import DisciplinesBody from "../components/BodyPage/DisciplinesBody";
 import DisciplesMaterials from "../components/BodyPage/DisciplesMaterials";
 import PageComponents from "../components/Models/PageComponents";
 import { useSelector } from "react-redux";
 import { AppState } from "../../props/state";
 import { ComponentStyle } from "../components/Headers/ComponentStyle";
+import DisciplinesHeader from "../components/Headers/DisciplinesHeader";
+import BodyStyle from "../components/Models/BodyStyle";
 
 const DisciplinesPage = () => {
   const open = useSelector((state: AppState) => state.open);
@@ -18,15 +18,15 @@ const DisciplinesPage = () => {
         <SideBar />
       </div>
       <PageComponents open={open}>
-        <SearchDisciplinesHeader />
-        <div className="overflow-y-scroll px-4 h-[80%]">
+        <DisciplinesHeader />
+        <BodyStyle>
           <ComponentStyle>
             <DisciplinesBody />
           </ComponentStyle>
           <ComponentStyle>
             <DisciplesMaterials />
           </ComponentStyle>
-        </div>
+        </BodyStyle>
       </PageComponents>
     </div>
   );

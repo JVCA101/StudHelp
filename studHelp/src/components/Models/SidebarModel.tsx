@@ -40,6 +40,9 @@ export const SideBarModel = ({
           open ? "w-[100%] md:w-[40%] min-[1200px]:w-[25%]" : "w-[10%]"
         } duration-1000 h-screen bg-gradient-to-b from-blue-400  via-blue-500  to-blue-200 relative`}
       >
+        <div
+          className={`w-[95%] absolute left-[2.5%] top-[15%] h-[1px] bg-black opacity-30  duration-1000`}
+        ></div>
         <img
           src="./src/assets/right-arrow-angle 2.svg"
           className={`absolute cursor-pointer -right-2 w-10 top-0 ${
@@ -51,7 +54,7 @@ export const SideBarModel = ({
           <img
             src="./src/assets/logo.png"
             className={`duration-500 w-32 py-2 px-1 ${
-              !open && " left-3 relative w-24 origin-left py-7"
+              !open && " left-3 relative w-24 origin-left"
             }`}
           />
           <div className="">
@@ -69,11 +72,7 @@ export const SideBarModel = ({
             </h1>
           </div>
         </div>
-        <div
-          className={`w-screen h-[1px] bg-black opacity-20 ${
-            open ? "mt-7" : "-mt-3"
-          } duration-1000`}
-        ></div>
+
         <ul className="">
           {Menus.map((menu, index) => (
             <li key={index}>
