@@ -13,3 +13,5 @@
 [Diagrama de Classes](https://drive.google.com/file/d/1COMMn51CtqPTQCkwS2m8_-lHmjkT6nzS/view?usp=sharing)
 
 [Diagramas de Transição de Estados](https://drive.google.com/drive/folders/1PJjWgDrbXSmK8PDlOoiut_eGzUukskeY?usp=sharing)
+
+[Diagramas de Sequencia](https://drive.google.com/drive/folders/1k1YrVld4CwOqvTGcFGG5emzYKlz7SN9i?usp=sharing)
