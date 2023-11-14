@@ -1,5 +1,6 @@
 interface GroupsRequestStyleProps {
   adm: string;
+  disciplineCode: string;
   currentMembers: string[];
   totalMembers: number;
   day: string;
@@ -9,6 +10,7 @@ interface GroupsRequestStyleProps {
 }
 
 export const GroupsRequestStyle = ({
+  disciplineCode,
   open,
   adm,
   currentMembers,
@@ -50,8 +52,9 @@ export const GroupsRequestStyle = ({
               <p
                 className={`${
                   open ? "text-2xl" : "text-[1.2rem]"
-                } font-roboto text-white p-7 duration-0`}
+                } font-roboto text-white px-7 py-3 duration-0`}
               >
+                Disciplina: {disciplineCode} <br />
                 Admin: {adm} <br />
                 N° de membros: {numberCurrentMembers}/{totalMembers} <br />
                 Dia: {day} <br />

@@ -1,10 +1,18 @@
 import SearchDisciplinesHeader from "../AuxComponents/SearchDisciplinesHeader";
 import HeaderStyle from "../Models/HeaderStyle";
+interface Props {
+  inputContent: string;
+  setInputContent: React.Dispatch<React.SetStateAction<string>>;
+}
 
-export const DisciplinesHeader = () => {
+export const DisciplinesHeader = ({ inputContent, setInputContent }: Props) => {
   return (
     <HeaderStyle>
-      <SearchDisciplinesHeader></SearchDisciplinesHeader>
+      <SearchDisciplinesHeader
+        setInputContent={setInputContent}
+        inputContent={inputContent}
+        content={"Insira código da Disciplina"}
+      ></SearchDisciplinesHeader>
     </HeaderStyle>
   );
 };

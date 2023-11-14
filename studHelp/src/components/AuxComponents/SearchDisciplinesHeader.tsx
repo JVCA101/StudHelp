@@ -1,6 +1,16 @@
 import InputModel from "../Models/InputModel";
 
-function SearchDisciplinesHeader() {
+interface SearchDisciplinesHeaderProps {
+  content: string;
+  setInputContent: React.Dispatch<React.SetStateAction<string>>;
+  inputContent: string;
+}
+
+function SearchDisciplinesHeader({
+  content,
+  setInputContent,
+  inputContent,
+}: SearchDisciplinesHeaderProps) {
   return (
     <div className=" font-roboto top-[20%] relative">
       <div className="">
@@ -13,8 +23,10 @@ function SearchDisciplinesHeader() {
           <div className="w-1/2">
             <InputModel
               type="text"
-              placeholder="Insira o Código da Disciplina"
-            ></InputModel>
+              placeholder={content}
+              setInputContent={setInputContent}
+              inputContent={inputContent}
+            />
           </div>
           <img src={`./src/assets/search 1.svg`} className="cursor-pointer" />
         </div>

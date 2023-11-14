@@ -6,9 +6,12 @@ import { AppState } from "../../props/state";
 import { ComponentStyle } from "../components/Headers/ComponentStyle";
 import BodyStyle from "../components/Models/BodyStyle";
 import GroupHeader from "../components/Headers/GroupsHeader";
+import { useState } from "react";
 
 const GroupsPage = () => {
   const open = useSelector((state: AppState) => state.open);
+
+  const [inputContent, setInputContent] = useState("");
 
   document.title = "Grupos de Estudo - StudHelp";
   return (
@@ -17,10 +20,13 @@ const GroupsPage = () => {
         <SideBar />
       </div>
       <PageComponents open={open}>
-        <GroupHeader />
+        <GroupHeader
+          setInputContent={setInputContent}
+          inputContent={inputContent}
+        />
         <BodyStyle>
           <ComponentStyle>
-            <GroupsBody open={open} />
+            <GroupsBody open={open} inputContent={inputContent} />
           </ComponentStyle>
         </BodyStyle>
       </PageComponents>

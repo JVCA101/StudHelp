@@ -7,9 +7,11 @@ import { AppState } from "../../props/state";
 import { ComponentStyle } from "../components/Headers/ComponentStyle";
 import DisciplinesHeader from "../components/Headers/DisciplinesHeader";
 import BodyStyle from "../components/Models/BodyStyle";
+import { useState } from "react";
 
 const DisciplinesPage = () => {
   const open = useSelector((state: AppState) => state.open);
+  const [inputContent, setInputContent] = useState("");
 
   document.title = "Disciplinas - StudHelp";
   return (
@@ -18,7 +20,10 @@ const DisciplinesPage = () => {
         <SideBar />
       </div>
       <PageComponents open={open}>
-        <DisciplinesHeader />
+        <DisciplinesHeader
+          setInputContent={setInputContent}
+          inputContent={inputContent}
+        />
         <BodyStyle>
           <ComponentStyle>
             <DisciplinesBody />
