@@ -6,7 +6,7 @@ export const GroupHeader = () => {
   return (
     <HeaderStyle>
       <div className="w-full h-full flex">
-        <div className="w-[80%]">
+        <div className="w-[70%]">
           <SearchDisciplinesHeader />
         </div>
         <CreateGroup />

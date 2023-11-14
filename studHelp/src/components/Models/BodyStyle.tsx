@@ -4,7 +4,7 @@ interface Props {
 
 export const BodyStyle = ({ children }: Props) => {
   return (
-    <div className="py-2 h-[85%]">
+    <div className="py-2 h-[80%]">
       <div className="overflow-y-scroll px-4 h-full">{children}</div>
     </div>
   );

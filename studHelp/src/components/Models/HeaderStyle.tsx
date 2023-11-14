@@ -3,7 +3,7 @@ interface Props {
 }
 
 export const HeaderStyle = ({ children }: Props) => {
-  return <div className="bg-white h-[15%] px-6 shadow-lg">{children}</div>;
+  return <div className="bg-white h-[20%] px-6 shadow-lg">{children}</div>;
 };
 
 export default HeaderStyle;

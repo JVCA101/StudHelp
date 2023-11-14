@@ -11,8 +11,8 @@ function HeaderAluno({ open }: Props) {
     <HeaderStyle>
       <div
         className={`px-4  ${
-          open ? "text-[2.7rem]" : "text-[2.0rem]"
-        }  duration-1000 font-semibold font-roboto  py-10 relative flex gap-x-28 text-blue-900 "}`}
+          open ? "text-[2.2rem]" : "text-[2.5rem]"
+        }  duration-1000 font-semibold font-roboto  py-10 relative flex gap-x-24 text-blue-900 "}`}
       >
         <h1>Aluno: {name}</h1>
         <h1>Curso: {course}</h1>
