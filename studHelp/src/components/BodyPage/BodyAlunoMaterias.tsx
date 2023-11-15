@@ -1,4 +1,6 @@
+import { useState } from "react";
 import DisciplinesStyle from "../Models/DisciplinesStyle";
+import PopUpGradeCurso from "../Models/PopUpGradeCurso";
 
 function HeaderAluno() {
   const Menus = [
@@ -15,6 +17,16 @@ function HeaderAluno() {
     { name: "Cálculo 5", code: "MAT005" },
     { name: "Cálculo 6", code: "MAT006" },
   ];
+
+  const [isGradeOpen, setIsGradeOpen] = useState(false);
+
+  const openGrade = () => {
+    setIsGradeOpen(true);
+  };
+
+  const closeGrade = () => {
+    setIsGradeOpen(false);
+  };
 
   return (
     <div className="font-roboto font-medium text-blue-900 w-full">
@@ -45,12 +57,15 @@ function HeaderAluno() {
         </div>
 
         <div className="flex mt-7 w-fit text-[1.2rem] text-blue-400 cursor-pointer gap-x-[165px] px-8">
-          <h1 className=" hover:text-blue-900 gap-x-10">
+          <h1 className=" hover:text-blue-900 gap-x-10" onClick={openGrade}>
             Consultar grade do curso
           </h1>
           <h1 className=" hover:text-blue-900 ">
             Consultar Disciplinas Recomendadas
           </h1>
+          <div>
+            <PopUpGradeCurso isOpen={isGradeOpen} onClose={closeGrade} />
+          </div>
         </div>
       </div>
     </div>
