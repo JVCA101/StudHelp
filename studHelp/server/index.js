@@ -1,6 +1,6 @@
 // server/index.ts
 import express from 'express';
-import {selectStudents} from './db.js';
+import { PrismaClient } from '@prisma/client';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -15,9 +15,8 @@ app.listen(port, () => {
 });
 
 (async () => {
-  console.log('Começou!');
-
-  console.log('SELECT * FROM student_tb');
-  const students = await selectStudents();
-  console.log(students);
+  console.log('Conectou!');
+  const prisma = new PrismaClient();
+  const devices = await prisma.device.findMany()
+  console.log(devices);
 })();
