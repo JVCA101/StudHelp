@@ -12,7 +12,7 @@ const CreateGroup: React.FC = () => {
     setIsPopupOpen(false);
   };
   return (
-    <div className=" mt-[121px] ">
+    <div className="top-[40%] relative w-fit ">
       <div className="cursor-pointer hover:underline">
         <div className="flex gap-x-2" onClick={openPopup}>
           <img src="./src/assets/plus 1.svg" />

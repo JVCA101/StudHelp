@@ -1,28 +1,89 @@
-function HeaderAluno() {
-  return (
-    <div className="font-roboto font-medium">
-      <div className="py-4 hover:overflow-x-scroll">
-        <h1 className=" mt-4  text-[1.8rem]">Minhas Disciplinas:</h1>
+import { useState } from "react";
+import DisciplinesStyle from "../Models/DisciplinesStyle";
+import PopUpGradeCurso from "../Models/PopUpGradeCurso";
+import PopUpDisciplinasRecomendadas from "../Models/PopUpDisciplinasRecomendadas";
 
-        <div className="text-white">
-          <div className="bg-blue-900 w-1/4 h-24 text-[1.5rem] rounded-[90px] mt-7">
-            <h1 className="px-8 py-2 ">user.getSubject(0)</h1>
-            <h1 className="px-8 text-[1.1rem] ">user.getSubject(0).getId()</h1>
+function HeaderAluno() {
+  const Menus = [
+    { name: "Cálculo 1", code: "MAT001" },
+    { name: "Cálculo 2", code: "MAT002" },
+    { name: "Cálculo 3", code: "MAT003" },
+    { name: "Cálculo 4", code: "MAT004" },
+    { name: "Cálculo 5", code: "MAT005" },
+    { name: "Cálculo 6", code: "MAT006" },
+    { name: "Cálculo 1", code: "MAT001" },
+    { name: "Cálculo 2", code: "MAT002" },
+    { name: "Cálculo 3", code: "MAT003" },
+    { name: "Cálculo 4", code: "MAT004" },
+    { name: "Cálculo 5", code: "MAT005" },
+    { name: "Cálculo 6", code: "MAT006" },
+  ];
+
+  const [isGradeOpen, setIsGradeOpen] = useState(false);
+
+  const [isDisciplinasOpen, setIsDisciplinasOpen] = useState(false);
+
+  const openDisciplinas = () => {
+    setIsDisciplinasOpen(true);
+  };
+
+  const closeDisciplinas = () => {
+    setIsDisciplinasOpen(false);
+  };
+
+  const openGrade = () => {
+    setIsGradeOpen(true);
+  };
+
+  const closeGrade = () => {
+    setIsGradeOpen(false);
+  };
+
+  return (
+    <div className="font-roboto font-medium text-blue-900 w-full">
+      <div className="">
+        <h1 className="text-[1.8rem]">Minhas Disciplinas:</h1>
+
+        <div className="overflow-x-scroll py-4">
+          <div className="flex gap-x-32">
+            {Menus.map(
+              (menu, index) =>
+                index % 2 === 0 && (
+                  <div key={index} className="flex">
+                    <DisciplinesStyle name={menu.name} code={menu.code} />
+                  </div>
+                )
+            )}
           </div>
-          <div className="bg-blue-900 w-1/4 h-24 rounded-[90px] mt-8 text-[1.5rem]">
-            <h1 className="px-8 py-2 ">user.getSubject(0)</h1>
-            <h1 className="px-8 text-[1.1rem] ">user.getSubject(0).getId()</h1>
+          <div className="flex gap-x-32">
+            {Menus.map(
+              (menu, index) =>
+                index % 2 === 1 && (
+                  <div key={index} className="flex">
+                    <DisciplinesStyle name={menu.name} code={menu.code} />
+                  </div>
+                )
+            )}
           </div>
         </div>
-      </div>
 
-      <div className="flex mt-7 w-fit   text-[1.2rem] text-blue-400 cursor-pointer gap-x-64 px-8">
-        <h1 className=" hover:text-blue-900 gap-x-10">
-          Consultar grade do curso
-        </h1>
-        <h1 className=" hover:text-blue-900 ">
-          Consultar Disciplianas Recomendadas
-        </h1>
+        <div className="flex mt-7 w-fit text-[1.2rem] text-blue-400 cursor-pointer gap-x-[165px] px-8">
+          <h1 className=" hover:text-blue-900 gap-x-10" onClick={openGrade}>
+            Consultar grade do curso
+          </h1>
+          <h1 className=" hover:text-blue-900 " onClick={openDisciplinas}>
+            Consultar Disciplinas Recomendadas
+          </h1>
+        </div>
+        <div>
+          <PopUpGradeCurso isOpen={isGradeOpen} onClose={closeGrade} />
+        </div>
+        <div>
+          <PopUpDisciplinasRecomendadas
+            isOpen={isDisciplinasOpen}
+            onClose={closeDisciplinas}
+          />
+        </div>
       </div>
     </div>
   );

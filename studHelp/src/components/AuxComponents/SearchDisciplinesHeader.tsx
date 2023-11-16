@@ -1,19 +1,35 @@
 import InputModel from "../Models/InputModel";
 
-function SearchDisciplinesHeader() {
+interface SearchDisciplinesHeaderProps {
+  content: string;
+  setInputContent: React.Dispatch<React.SetStateAction<string>>;
+  inputContent: string;
+}
+
+function SearchDisciplinesHeader({
+  content,
+  setInputContent,
+  inputContent,
+}: SearchDisciplinesHeaderProps) {
   return (
-    <div className="mt-[90px] px-8 font-roboto">
-      <div>
-        <h1 className="text-2xl font-roboto select-none">Buscar Disciplina:</h1>
-      </div>
-      <div className="flex gap-x-1">
-        <div className="w-1/2">
-          <InputModel
-            type="text"
-            placeholder="Insira o Código da Disciplina"
-          ></InputModel>
+    <div className=" font-roboto top-[20%] relative">
+      <div className="">
+        <div>
+          <h1 className="text-2xl font-roboto select-none">
+            Buscar Disciplina:
+          </h1>
         </div>
-        <img src={`./src/assets/search 1.svg`} className="cursor-pointer" />
+        <div className="flex gap-x-1">
+          <div className="w-1/2">
+            <InputModel
+              type="text"
+              placeholder={content}
+              setInputContent={setInputContent}
+              inputContent={inputContent}
+            />
+          </div>
+          <img src={`./src/assets/search 1.svg`} className="cursor-pointer" />
+        </div>
       </div>
     </div>
   );

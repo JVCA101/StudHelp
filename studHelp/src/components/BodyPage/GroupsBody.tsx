@@ -1,54 +1,110 @@
+import GroupsRequestStyle from "../Models/GroupsRequestStyle";
+
 interface Props {
   open: boolean;
+  inputContent: string;
 }
 
-function GroupsBody({ open }: Props) {
-  return (
-    <div className="mt-8  relative font-roboto">
-      <div>
-        <h1 className="text-4xl font-roboto px-8">Grupo da Disciplina:</h1>
-      </div>
-      <div className="relative h-96 mt-10 overflow-y-scroll">
-        <div className="px-8 ">
-          <div
-            className={`bg-blue-900 ${
-              open ? "w-[26%]" : "w-[20%]"
-            } h-[74%] rounded-[40px] absolute top-3`}
-          ></div>
+function GroupsBody({ open, inputContent }: Props) {
+  const Groups = [
+    {
+      disciplineCode: "DCC123",
+      adm: "João",
+      currentMembers: ["João", "Maria"],
+      totalMembers: 5,
+      day: "Segunda",
+      time: "08:00",
+      local: "Sala 4",
+    },
+    {
+      disciplineCode: "MAT103",
+      adm: "João",
+      currentMembers: ["João", "Maria"],
+      totalMembers: 5,
+      day: "Segunda",
+      time: "08:00",
+      local: "Sala 4",
+    },
+    {
+      disciplineCode: "FIS105",
+      adm: "João",
+      currentMembers: ["João", "Maria"],
+      totalMembers: 5,
+      day: "Segunda",
+      time: "08:00",
+      local: "Sala 4",
+    },
+    {
+      disciplineCode: "DCC001",
+      adm: "João",
+      currentMembers: ["João", "Maria"],
+      totalMembers: 5,
+      day: "Segunda",
+      time: "08:00",
+      local: "Sala 4",
+    },
+    {
+      disciplineCode: "DCC002",
+      adm: "João",
+      currentMembers: ["João", "Maria"],
+      totalMembers: 5,
+      day: "Segunda",
+      time: "08:00",
+      local: "Sala 4",
+    },
+  ];
 
-          <div
-            className={`bg-blue-600  ${
-              open ? "w-[25%]" : "w-[19%]"
-            } h-[73%] rounded-[40px] left-12 absolute`}
-          >
-            <div className="relative">
-              <h1
-                className={`top-[14rem]  ${
-                  open ? "text-3xl" : "text-[1.6rem]"
-                } absolute left-[35%] text-white  hover:text-blue-300  hover:font-medium hover:text-[2.0rem] font-roboto duration-300 cursor-pointer`}
-              >
-                Entrar
+  const filteredGroups =
+    inputContent.length > 0
+      ? Groups.filter((group) =>
+          group.disciplineCode.includes(inputContent.toLocaleUpperCase())
+        )
+      : [];
+
+  return (
+    <div className="relative font-roboto h-full">
+      <div>
+        <h1 className="text-4xl font-roboto px-4">Grupo da Disciplina:</h1>
+      </div>
+      <div className="relative h-full mt-10 ">
+        <div className="flex-wrap flex gap-y-20">
+          {inputContent.length === 0 ? (
+            Groups.map((group, index) => (
+              <div key={index} className="flex">
+                <GroupsRequestStyle
+                  adm={group.adm}
+                  currentMembers={group.currentMembers}
+                  totalMembers={group.totalMembers}
+                  day={group.day}
+                  time={group.time}
+                  local={group.local}
+                  open={open}
+                  disciplineCode={group.disciplineCode}
+                />
+              </div>
+            ))
+          ) : filteredGroups.length === 0 ? (
+            <div>
+              <h1 className="text-2xl font-roboto px-4">
+                Nenhum grupo encontrado
               </h1>
             </div>
-          </div>
-
-          <div
-            className={`bg-blue-400 ${
-              open ? "w-[25%]" : "w-[19%]"
-            } h-[55%]   rounded-[40px] absolute left-12 `}
-          >
-            <p
-              className={`${
-                open ? "text-2xl" : "text-[1.2rem]"
-              } font-roboto text-white p-7 duration-0`}
-            >
-              Admin: user.getNome() <br />
-              N° de membros: 4/5 <br />
-              Dia: Terça <br />
-              Horário: 19:00 <br />
-              Local: Sala 1 <br />
-            </p>
-          </div>
+          ) : (
+            filteredGroups.map((filteredGroups, index) => (
+              <div key={index} className="flex">
+                <GroupsRequestStyle
+                  adm={filteredGroups.adm}
+                  currentMembers={filteredGroups.currentMembers}
+                  totalMembers={filteredGroups.totalMembers}
+                  day={filteredGroups.day}
+                  time={filteredGroups.time}
+                  local={filteredGroups.local}
+                  open={open}
+                  disciplineCode={filteredGroups.disciplineCode}
+                />
+              </div>
+            ))
+          )}
         </div>
       </div>
     </div>

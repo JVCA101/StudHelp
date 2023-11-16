@@ -17,15 +17,17 @@ export const AdminSideBar: React.FC = () => {
   ];
 
   return (
-    <SideBarModel
-      open={open}
-      textHead={"Bem vindo"}
-      subText={"Gabriel Oliveira Quaresma"}
-      subTextSize={"sm"}
-      Menus={Menus}
-    >
-      <div></div>
-    </SideBarModel>
+    <div className="w-screen">
+      <SideBarModel
+        open={open}
+        textHead={"Bem vindo"}
+        subText={"Gabriel Oliveira Quaresma"}
+        subTextSize={"sm"}
+        Menus={Menus}
+      >
+        <div></div>
+      </SideBarModel>
+    </div>
   );
 };
 

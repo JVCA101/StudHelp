@@ -1,14 +1,55 @@
 import { useState } from "react";
+import { Material } from "../../../props/interface.ts";
+import { Disciplina } from "../../../props/interface.ts";
 
-function DisciplesMaterials() {
+export const DisciplesMaterials = () => {
   const [listOpen, setListOpen] = useState(false);
 
   const toggleList = () => {
     setListOpen(!listOpen);
   };
 
+  const mat1: Material = {
+    name: "Apostila",
+    url: "https://www.google.com/",
+  };
+
+  const mat6: Material = {
+    name: "Apostila",
+    url: "https://www.google.com/",
+  };
+
+  const mat5: Material = {
+    name: "Apostila",
+    url: "https://www.google.com/",
+  };
+
+  const mat4: Material = {
+    name: "Apostila",
+    url: "https://www.google.com/",
+  };
+
+  const mat3: Material = {
+    name: "Apostila",
+    url: "https://www.google.com/",
+  };
+
+  const mat2: Material = {
+    name: "Apostila",
+    url: "https://www.google.com/",
+  };
+
+  const subject3: Disciplina = {
+    name: "Cálculo 3",
+    code: "MAT003",
+    difficultyLevel: 3,
+    requisitos: [],
+    dependentes: [],
+    materiais: [mat1, mat2, mat3, mat4, mat5, mat6],
+  };
+
   return (
-    <div className="mt-20 px-8">
+    <div className="px-8 text-blue-900 ">
       <div
         className="flex gap-x-8 hover:font-bold cursor-pointer"
         onClick={toggleList}
@@ -29,9 +70,28 @@ function DisciplesMaterials() {
           }`}
           onClick={toggleList}
         />
+        <ul>
+          <li></li>
+        </ul>
       </div>
+      <ul className="">
+        <li className="">
+          {listOpen &&
+            subject3.materiais.map((material, index) => (
+              <div key={index} className="text-2xl py-1  underline">
+                <a
+                  href={material.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {material.name}
+                </a>
+              </div>
+            ))}
+        </li>
+      </ul>
     </div>
   );
-}
+};
 
 export default DisciplesMaterials;

@@ -1,33 +1,34 @@
 import SideBar from "../components/AuxComponents/SideBar";
-import SearchDisciplinesHeader from "../components/AuxComponents/SearchDisciplinesHeader";
-import CreateGroup from "../components/AuxComponents/CreateGroup";
 import GroupsBody from "../components/BodyPage/GroupsBody";
 import PageComponents from "../components/Models/PageComponents";
 import { useSelector } from "react-redux";
 import { AppState } from "../../props/state";
+import { ComponentStyle } from "../components/Models/ComponentStyle";
+import BodyStyle from "../components/Models/BodyStyle";
+import GroupHeader from "../components/Headers/GroupsHeader";
+import { useState } from "react";
 
 const GroupsPage = () => {
   const open = useSelector((state: AppState) => state.open);
 
+  const [inputContent, setInputContent] = useState("");
+
   document.title = "Grupos de Estudo - StudHelp";
   return (
-    <div className="w-screen h-screen">
-      <div className="absolute">
+    <div className="w-screen h-screen bg-gray-100">
+      <div className="absolute w-screen">
         <SideBar />
       </div>
       <PageComponents open={open}>
-        <div className="flex w-full">
-          <div className="w-full sm:w-1/2 md:w-1/3 lg:w-3/4">
-            <SearchDisciplinesHeader />
-          </div>
-          <div className="w-full sm:w-1/2 md:w-2/3 lg:w-1/4">
-            <CreateGroup />
-          </div>
-        </div>
-
-        <div className="h-[70%]">
-          <GroupsBody open={open} />
-        </div>
+        <GroupHeader
+          setInputContent={setInputContent}
+          inputContent={inputContent}
+        />
+        <BodyStyle>
+          <ComponentStyle>
+            <GroupsBody open={open} inputContent={inputContent} />
+          </ComponentStyle>
+        </BodyStyle>
       </PageComponents>
     </div>
   );
