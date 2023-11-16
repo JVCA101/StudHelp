@@ -1,7 +1,7 @@
-import { Subject } from "../../../props/SubjectProps.ts";
+import { Disciplina } from "../../../props/interface.ts";
 
 export const DisciplinesBody = () => {
-  const subject1: Subject = {
+  const subject1: Disciplina = {
     name: "Cálculo 1",
     code: "MAT001",
     difficultyLevel: 1,
@@ -9,7 +9,7 @@ export const DisciplinesBody = () => {
     dependentes: [],
     materiais: [],
   };
-  const subject2: Subject = {
+  const subject2: Disciplina = {
     name: "Cálculo 2",
     code: "MAT002",
     difficultyLevel: 1,
@@ -17,7 +17,7 @@ export const DisciplinesBody = () => {
     dependentes: [],
     materiais: [],
   };
-  const subject4: Subject = {
+  const subject4: Disciplina = {
     name: "Cálculo 4",
     code: "MAT004",
     difficultyLevel: 1,
@@ -25,7 +25,7 @@ export const DisciplinesBody = () => {
     dependentes: [],
     materiais: [],
   };
-  const subject3: Subject = {
+  const subject3: Disciplina = {
     name: "Cálculo 3",
     code: "MAT003",
     difficultyLevel: 3,

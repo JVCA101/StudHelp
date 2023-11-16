@@ -6,7 +6,7 @@ import BodyAlunoMateriasFeitas from "../components/BodyPage/BodyAlunoMateriasFei
 import PageComponents from "../components/Models/PageComponents";
 import { useSelector } from "react-redux";
 import { AppState } from "../../props/state";
-import { ComponentStyle } from "../components/Headers/ComponentStyle";
+import { ComponentStyle } from "../components/Models/ComponentStyle";
 import BodyStyle from "../components/Models/BodyStyle";
 
 const StudentPage = () => {

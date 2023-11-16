@@ -3,7 +3,7 @@ import GroupsBody from "../components/BodyPage/GroupsBody";
 import PageComponents from "../components/Models/PageComponents";
 import { useSelector } from "react-redux";
 import { AppState } from "../../props/state";
-import { ComponentStyle } from "../components/Headers/ComponentStyle";
+import { ComponentStyle } from "../components/Models/ComponentStyle";
 import BodyStyle from "../components/Models/BodyStyle";
 import GroupHeader from "../components/Headers/GroupsHeader";
 import { useState } from "react";

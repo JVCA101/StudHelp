@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Material } from "../../../props/MaterialProps.ts";
-import { Subject } from "../../../props/SubjectProps.ts";
+import { Material } from "../../../props/interface.ts";
+import { Disciplina } from "../../../props/interface.ts";
 
 export const DisciplesMaterials = () => {
   const [listOpen, setListOpen] = useState(false);
@@ -39,7 +39,7 @@ export const DisciplesMaterials = () => {
     url: "https://www.google.com/",
   };
 
-  const subject3: Subject = {
+  const subject3: Disciplina = {
     name: "Cálculo 3",
     code: "MAT003",
     difficultyLevel: 3,
