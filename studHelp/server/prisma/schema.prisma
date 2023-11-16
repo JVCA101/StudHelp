@@ -10,8 +10,59 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Device {
-  id   Int                   @id @default(autoincrement())
-  name String
-  age Int @map("age")
+model Curso {
+  codigo String       @id @db.VarChar(5)
+  nome String @db.VarChar(50)
+  disciplina Disciplina[]
+  alunos Estudante[]
 }
+
+model Disciplina {
+  codigo String       @id @db.VarChar(10)
+  nome String @db.VarChar(50)
+  creditos Int
+  //relaciona disciplina com o curso
+  curso Curso @relation(fields: [cursoCodigo], references: [codigo])
+  cursoCodigo String @db.VarChar(5)
+  turmas Turma[]
+  periodo Int
+  dificuldade Int
+  ementa String? @db.VarChar(20)
+  materiais String? @db.VarChar(20)
+}
+
+model Turma {
+  id Int       @id @default(autoincrement())
+  disciplina Disciplina @relation(fields: [disciplinaCodigo], references: [codigo])
+  disciplinaCodigo String @db.VarChar(10)
+  codigoPeriodo String @db.VarChar(10)
+  alunos EstudanteTurma[]
+}
+
+model Estudante {
+  id Int      @id @default(autoincrement())
+  nome String @db.VarChar(50)
+  nomeSocial String? @db.VarChar(50)
+  login String @db.VarChar(50)
+  senha String @db.VarChar(25)
+  curso Curso @relation(fields: [cursoCodigo], references: [codigo])
+  cursoCodigo String @db.VarChar(5)
+  turmas EstudanteTurma[]
+}
+
+model EstudanteTurma{
+  turmaId Int
+  estudanteId Int
+  turma Turma @relation(fields: [turmaId], references: [id])
+  estudante Estudante @relation(fields: [estudanteId], references: [id])
+  status Status @default(MATRICULADO)
+
+  @@id([turmaId, estudanteId])
+}
+
+enum Status{
+  APROVADO
+  REPROVADO
+  MATRICULADO
+}
+
