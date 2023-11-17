@@ -7,6 +7,8 @@ interface GroupsStyleProps {
   adm: string;
 }
 import { MdManageAccounts } from "react-icons/md";
+import ManageGroup from "./ManageGroup";
+import { useState } from "react";
 
 export const GroupsStyle = ({
   disciplina,
@@ -16,14 +18,22 @@ export const GroupsStyle = ({
   local,
   adm,
 }: GroupsStyleProps) => {
+  const [open, setOpen] = useState(false);
   return (
     <div className="relative h-52 hover:bg-blue-700 transition-colors duration-300 rounded-[50px] mt-7 w-72 bg-blue-900 text-[1.2rem] text-white">
-      <div
-        className="absolute top-0 right-4  hover:scale-150 duration-300 mt-4 cursor-pointer z-10"
-        style={{ fontSize: "25px" }}
-      >
-        <MdManageAccounts />
+      <div className="w-full flex flex-col absolute">
+        <div
+          className="hover:scale-150 duration-300 mt-4 ml-auto p-2 cursor-pointer z-10"
+          style={{ fontSize: "30px" }}
+          onClick={() => setOpen(!open)}
+        >
+          <MdManageAccounts />
+        </div>
+        <div className="w-fit left-[85%] relative">
+          <ManageGroup open={open} isAdmin={true} />
+        </div>
       </div>
+
       <div>
         <h1 className="flex justify-center items-center relative py-2">
           Disciplina: {disciplina} <br />

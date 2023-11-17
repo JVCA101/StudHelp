@@ -22,7 +22,7 @@ function HeaderAluno({ open }: Props) {
         >
           <IoSettingsOutline />
         </div>
-        <div className="mt-2 right-10 relative">
+        <div className="mt-2 right-6 relative">
           <ProfileSettings open={openSettings} />
         </div>
       </div>
