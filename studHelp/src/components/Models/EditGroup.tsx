@@ -1,4 +1,3 @@
-import { group } from "console";
 import InputModel from "./InputModel";
 import { useState } from "react";
 import BanParticipant from "./BanParticipante";
@@ -86,7 +85,7 @@ const EditGroup: React.FC<PopupProps> = ({ isOpen, onClose }: PopupProps) => {
                     </h1>
                     <InputModel
                       type="number"
-                      placeholder={group.totalMembers}
+                      placeholder={group.totalMembers.toString()}
                     ></InputModel>
                   </div>
                   <div className="mb-4">
