@@ -34,10 +34,10 @@ export const SideBarModel = ({
       : "text-base";
 
   return (
-    <div className="flex select-none text-blue-900 font-roboto">
+    <div className="flex select-none text-blue-900 font-roboto max-sm:w-0">
       <div
         className={`${
-          open ? "w-[100%] md:w-[40%] min-[1200px]:w-[25%]" : "w-[12%]"
+          open ? "md:w-[40%] min-[1200px]:w-[25%]" : "w-[12%]"
         } duration-1000 h-screen bg-gradient-to-b from-blue-400  via-blue-500  to-blue-200 relative`}
       >
         <img

@@ -13,9 +13,9 @@ const StudentPage = () => {
   const open = useSelector((state: AppState) => state.open);
 
   document.title = "Página do Aluno - StudHelp";
+
   return (
     <div className="w-screen h-screen bg-gray-100">
-      <title>Aluno </title>
       <div className="absolute">
         <SideBar />
       </div>
