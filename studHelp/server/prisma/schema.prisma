@@ -10,32 +10,49 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+//* Objetos
+
 model Curso {
   codigo String       @id @db.VarChar(5)
-  nome String @db.VarChar(50)
-  disciplina Disciplina[]
+  nome String         @db.VarChar(50)
+
+  // curso - disciplina (many to many)
+  grade CursoDisciplina[]
+
+  // curso - estudante (one to many)
   alunos Estudante[]
 }
 
 model Disciplina {
   codigo String       @id @db.VarChar(10)
   nome String @db.VarChar(50)
-  creditos Int
-  //relaciona disciplina com o curso
-  curso Curso @relation(fields: [cursoCodigo], references: [codigo])
-  cursoCodigo String @db.VarChar(5)
-  turmas Turma[]
-  periodo Int
-  dificuldade Int
+  creditos Int @default(4)
+  dificuldade Dificuldade @default(MEDIO)
   ementa String? @db.VarChar(20)
   materiais String? @db.VarChar(20)
+
+  // curso - disciplina (many to many)
+  cursos CursoDisciplina[]
+
+  // disciplina - turma (one to many)
+  turmas Turma[]
+
+  // disciplina - grupo de estudo (one to many)
+  grupos GrupoEstudo[]
+
+  // disciplina - discussão (one to many)
+  discussoes Discussao[]
 }
 
 model Turma {
   id Int       @id @default(autoincrement())
+  codigoPeriodo String @db.VarChar(10)
+
+  // disciplina - turma (one to many)
   disciplina Disciplina @relation(fields: [disciplinaCodigo], references: [codigo])
   disciplinaCodigo String @db.VarChar(10)
-  codigoPeriodo String @db.VarChar(10)
+
+  // turma - estudante (many to many)
   alunos EstudanteTurma[]
 }
 
@@ -45,9 +62,88 @@ model Estudante {
   nomeSocial String? @db.VarChar(50)
   login String @db.VarChar(50)
   senha String @db.VarChar(25)
+
+  // curso - estudante (one to many)
   curso Curso @relation(fields: [cursoCodigo], references: [codigo])
   cursoCodigo String @db.VarChar(5)
+
+  // turma - estudante (many to many)
   turmas EstudanteTurma[]
+
+  // grupo de estudo - estudante (many to many)
+  grupos GrupoEstudoEstudante[]
+
+  // grupo de estudo - estudante (one to many)
+  grupoAdministrados GrupoEstudo[]
+
+  // discussão - estudante (one to many)
+  discussoes Discussao[]
+
+  // cometário - estudante (one to many)
+  comentarios Comentario[]
+}
+
+model GrupoEstudo{
+  id Int @id @default(autoincrement())
+  diaSemana DiaSemana
+  horario String? @db.VarChar(10) // 08:00 - 10:00
+  local String? @db.VarChar(50) @default("Biblioteca")
+  vagas Int @default(1)
+
+  // disciplina - grupo de estudo (one to many)
+  disciplina Disciplina @relation(fields: [disciplinaCodigo], references: [codigo])
+  disciplinaCodigo String @db.VarChar(10)
+
+  // grupo de estudo - estudante (many to many)
+  estudantes GrupoEstudoEstudante[]
+
+  // grupo de estudo - estudante (one to many)
+  admin Estudante @relation(fields: [adminId], references: [id])
+  adminId Int
+}
+
+model Discussao{
+  id Int @id @default(autoincrement())
+  titulo String @db.VarChar(50)
+  descricao String @db.VarChar(50)
+  dataCriacao DateTime @db.DateTime
+
+  // estudante - discussão (one to many)
+  estudante Estudante @relation(fields: [estudanteId], references: [id])
+  estudanteId Int
+
+  // disciplina - discussão (one to many)
+  disciplina Disciplina @relation(fields: [disciplinaCodigo], references: [codigo])
+  disciplinaCodigo String @db.VarChar(10)
+
+  // discussão - comentário (one to many)
+  comentarios Comentario[]
+}
+
+model Comentario{
+  id Int @id @default(autoincrement())
+  dataCriacao DateTime @db.DateTime
+  texto String @db.VarChar(300)
+
+  // estudante - cometário (one to many)
+  estudante Estudante @relation(fields: [estudanteId], references: [id])
+  estudanteId Int
+
+  // discussão - comentário (one to many)
+  discussao Discussao @relation(fields: [discussaoId], references: [id])
+  discussaoId Int
+}
+
+//* Relacionamentos
+
+model CursoDisciplina{
+  codigoCurso String @db.VarChar(5)
+  codigoDisciplina String @db.VarChar(10)
+  curso Curso @relation(fields: [codigoCurso], references: [codigo])
+  disciplina Disciplina @relation(fields: [codigoDisciplina], references: [codigo])
+  periodo Int @default(1)
+
+  @@id([codigoCurso, codigoDisciplina])
 }
 
 model EstudanteTurma{
@@ -60,9 +156,34 @@ model EstudanteTurma{
   @@id([turmaId, estudanteId])
 }
 
+model GrupoEstudoEstudante{
+  grupoEstudoId Int
+  estudanteId Int
+  grupoEstudo GrupoEstudo @relation(fields: [grupoEstudoId], references: [id])
+  estudante Estudante @relation(fields: [estudanteId], references: [id])
+  
+  @@id([grupoEstudoId, estudanteId])
+}
+
+//* Enumemarções
+
 enum Status{
   APROVADO
   REPROVADO
   MATRICULADO
 }
 
+enum DiaSemana{
+  SEGUNDA
+  TERCA
+  QUARTA
+  QUINTA
+  SEXTA
+  SABADO
+}
+
+enum Dificuldade{
+  FACIL
+  MEDIO
+  DIFICIL
+}
