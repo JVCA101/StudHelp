@@ -17,6 +17,79 @@ app.listen(port, () => {
 (async () => {
   console.log('Conectou!');
   const prisma = new PrismaClient();
-  const devices = await prisma.device.findMany()
-  console.log(devices);
+  const cursos = await prisma.curso.createMany({
+      data: [
+        {
+          nome: 'Ciência da Computação',
+          codigo: '65A',
+        },
+        {
+          nome: 'Engenharia de Computação',
+          codigo: '65B',
+        },
+        {
+          nome: 'Sistemas de Informação',
+          codigo: '65C',
+        },
+      ]
+    })
+  console.log(cursos);
+  const disciplinas = await prisma.disciplina.create({
+    data: {
+      nome: 'Modelagem de Sistemas',
+      codigo: 'DCC117',
+      cursos: { 
+        create: [
+          {
+            curso:{
+              connect: {
+                codigo: '65A' 
+              } 
+            },
+            periodo: 4 
+          },
+          {
+            curso:{
+              connect: {
+                codigo: '65B' 
+              } 
+            },
+            periodo: 3 
+          },
+        ],
+      },
+    },
+  })
+  console.log(disciplinas);
+  const user  = await prisma.estudante.create({
+    data: {
+      nome: 'Teste',
+      login: 'teste@teste.com',
+      senha: '123456',
+      curso: {
+        connect: {
+          codigo: '65A',
+        },
+      },
+      turmas:{
+        create: [
+          {
+            turma: {
+              create:
+              {
+                disciplina: {
+                  connect: {
+                    codigo: 'DCC117',
+                  },
+                },
+                codigoPeriodo: '2023.3',
+              },
+            }
+          },
+        ],
+      }
+    },
+  })
+  
+  console.log(user);
 })();
