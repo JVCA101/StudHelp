@@ -6,11 +6,11 @@ interface PageComponentsProps {
 export const PageComponents = ({ children, open }: PageComponentsProps) => {
   return (
     <div
-      className={`h-screen absolute text-blue-950 duration-1000
+      className={`h-screen absolute text-blue-950 duration-1000 max-md:w-screen
         ${
           open
-            ? " w-[50%] left-[50%] md:left-[40%] md:w-[60%] min-[1200px]:left-[25%]  min-[1200px]:w-[75%]"
-            : "w-[88%] left-[12%]"
+            ? "md:left-[40%] md:w-[60%] min-[1200px]:left-[25%]  min-[1200px]:w-[75%]"
+            : "w-[88%] left-[12%] max-md:w-screen max-md:left-0"
         }`}
     >
       {children}

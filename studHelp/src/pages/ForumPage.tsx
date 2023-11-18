@@ -14,9 +14,9 @@ function ForumPage() {
         <SideBar />
       </div>
       <PageComponents open={open}>
-        <h1 className="flex justify-center items-center font-roboto relative top-1/2">
+        <div className="flex justify-center items-center font-roboto relative top-1/2">
           Serviços indisponíveis por enquanto
-        </h1>
+        </div>
       </PageComponents>
     </div>
   );

@@ -34,7 +34,7 @@ export const SideBarModel = ({
       : "text-base";
 
   return (
-    <div className="flex select-none text-blue-900 font-roboto max-sm:w-0">
+    <div className="flex select-none text-blue-900 font-roboto max-md:hidden">
       <div
         className={`${
           open ? "md:w-[40%] min-[1200px]:w-[25%]" : "w-[12%]"

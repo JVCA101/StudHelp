@@ -3,7 +3,6 @@ export interface Usuario {
   admin: boolean;
   login: string;
   senha: string;
-  matricula: string;
 }
 
 export interface Estudante extends Usuario {
