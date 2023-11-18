@@ -34,33 +34,106 @@ app.listen(port, () => {
       ]
     })
   console.log(cursos);
-  const disciplinas = await prisma.disciplina.create({
+  await prisma.curso.update({
+    where: {
+      codigo: '65A',
+    },
     data: {
-      nome: 'Modelagem de Sistemas',
-      codigo: 'DCC117',
-      cursos: { 
-        create: [
+      grade:{
+        create:[
           {
-            curso:{
-              connect: {
-                codigo: '65A' 
-              } 
+            disciplina: {
+              create: {
+                nome: 'Modelagem de Sistemas',
+                codigo: 'DCC117',
+              },
             },
-            periodo: 4 
+            periodo: 4,
           },
           {
-            curso:{
-              connect: {
-                codigo: '65B' 
-              } 
+            disciplina: {
+              create: {
+                nome: 'Grafos',
+                codigo: 'DCC059',
+              },
             },
-            periodo: 3 
+            periodo: 3,
           },
-        ],
-      },
+          {
+            disciplina: {
+              create: {
+                nome: 'Estrutura de Dados I',
+                codigo: 'DCC013',
+              },
+            },
+            periodo: 2,
+          },
+        ]
+      }
     },
   })
-  console.log(disciplinas);
+  await prisma.curso.update({
+    where: {
+      codigo: '65B',
+    },
+    data: {
+      grade:{
+        create:[
+          {
+            disciplina: {
+              connect: {
+                codigo: 'DCC117',
+              },
+            },
+            periodo: 4,
+          },
+          {
+            disciplina: {
+              connect: {
+                codigo: 'DCC059',
+              },
+            },
+            periodo: 3,
+          },
+          {
+            disciplina: {
+              connect: {
+                codigo: 'DCC013',
+              },
+            },
+            periodo: 2,
+          },
+        ]
+      }
+    },
+  })
+  // const disciplinas = await prisma.disciplina.create({
+  //   data: {
+  //     nome: 'Modelagem de Sistemas',
+  //     codigo: 'DCC117',
+  //     cursos: { 
+  //       create: [
+  //         {
+  //           curso:{
+  //             connect: {
+  //               codigo: '65A' 
+  //             } 
+  //           },
+  //           periodo: 4 
+  //         },
+  //         {
+  //           curso:{
+  //             connect: {
+  //               codigo: '65B' 
+  //             } 
+  //           },
+  //           periodo: 3 
+  //         },
+  //       ],
+  //     },
+  //   },
+  // })
+  // console.log(disciplinas);
   const user  = await prisma.estudante.create({
     data: {
       nome: 'Teste',
