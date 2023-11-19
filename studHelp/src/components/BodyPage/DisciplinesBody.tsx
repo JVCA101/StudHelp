@@ -1,4 +1,4 @@
-import { Disciplina } from "../../../props/interface.ts";
+import { Disciplina } from "../../../props/data.ts";
 
 export const DisciplinesBody = () => {
   const subject1: Disciplina = {

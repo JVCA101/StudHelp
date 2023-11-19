@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Material } from "../../../props/interface.ts";
-import { Disciplina } from "../../../props/interface.ts";
+import { Material } from "../../../props/data.ts";
+import { Disciplina } from "../../../props/data.ts";
 
 export const DisciplesMaterials = () => {
   const [listOpen, setListOpen] = useState(false);

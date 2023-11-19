@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Usuario } from "../../../props/interface";
+import { Usuario } from "../../../props/data";
 import { FaBan } from "react-icons/fa";
 import Confirm from "./Confirm";
 

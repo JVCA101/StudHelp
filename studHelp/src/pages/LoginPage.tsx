@@ -3,7 +3,7 @@ import logoImage from "../assets/logo.png"; // Ajuste o caminho conforme a estru
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
 import LoginException from "../components/Models/LoginException";
-import { Estudante } from "../../props/interface";
+import { Estudante } from "../../props/data";
 
 function LoginPage() {
   const user: Estudante = {
@@ -11,7 +11,13 @@ function LoginPage() {
     login: "202265178AC",
     senha: "123456",
     admin: false,
-    curso: undefined,
+    curso: {
+      nome: "string",
+      codigo: "string",
+      grade: {
+        grade: [],
+      },
+    },
     historico: [],
     anoDeIngresso: "",
     matriculadas: [],

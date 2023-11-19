@@ -1,7 +1,7 @@
 import InputModel from "./InputModel";
 import { useState } from "react";
 import BanParticipant from "./BanParticipante";
-import { Usuario } from "../../../props/interface";
+import { Usuario } from "../../../props/data";
 import Confirm from "./Confirm";
 
 interface PopupProps {

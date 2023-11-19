@@ -3,7 +3,7 @@ interface PopupProps {
   onClose: () => void;
 }
 
-import { Disciplina } from "../../../props/interface.ts";
+import { Disciplina } from "../../../props/data.ts";
 
 const PopupCriarGrupo = ({ isOpen, onClose }: PopupProps) => {
   if (!isOpen) return null;
