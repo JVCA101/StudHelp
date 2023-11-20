@@ -44,8 +44,269 @@ app.listen(port, () => {
           {
             disciplina: {
               create: {
+                nome: 'Algoritmos',
+                codigo: 'DCC199',
+                creditos: 6,
+              },
+            },
+            periodo: 1,
+          },
+          {
+            disciplina: {
+              create: {
+                nome: 'Algoritmos - Prática',
+                codigo: 'DC5199',
+                creditos: 0,
+              },
+            },
+            periodo: 1,
+          },
+          {
+            disciplina: {
+              create: {
+                nome: 'Laboratório de Introdução às Ciências Físicas',
+                codigo: 'FIS122',
+                creditos: 2,
+              },
+            },
+            periodo: 1,
+          },
+          {
+            disciplina: {
+              create: {
+                nome: 'Introdução às Ciências Exatas',
+                codigo: 'ICE001',
+                creditos: 2,
+              },
+            },
+            periodo: 1,
+          },
+          {
+            disciplina: {
+              create: {
+                nome: 'Cálculo I',
+                codigo: 'MAT154',
+              },
+            },
+            periodo: 1,
+          },
+          {
+            disciplina: {
+              create: {
+                nome: 'Geometria Analítica e Sistemas Lineares',
+                codigo: 'MAT155',
+              },
+            },
+            periodo: 1,
+          },
+          {
+            disciplina: {
+              create: {
+                nome: 'Química Fundamental',
+                codigo: 'QUI125',
+              },
+            },
+            periodo: 1,
+          },
+          {
+            disciplina: {
+              create: {
+                nome: 'Laboratório de Química',
+                codigo: 'QUI126',
+              },
+            },
+            periodo: 1,
+          },
+          {
+            disciplina: {
+              create: {
+                nome: 'Algoritmos II',
+                codigo: 'DCC200',
+                creditos: 6,
+              },
+            },
+            periodo: 2,
+          },
+          {
+            disciplina: {
+              create: {
+                nome: 'Algoritmos II - Prática',
+                codigo: 'DC5200',
+                creditos: 0,
+              },
+            },
+            periodo: 2,
+          },
+          {
+            disciplina: {
+              create: {
+                nome: 'Introdução à Estatística',
+                codigo: 'EST028',
+              },
+            },
+            periodo: 2,
+          },
+          {
+            disciplina: {
+              create: {
+                nome: 'Introdução à Extensão',
+                codigo: 'EXT099',
+              },
+            },
+            periodo: 2,
+          },
+          {
+            disciplina: {
+              create: {
+                nome: 'Física I',
+                codigo: 'FIS073',
+              },
+            },
+            periodo: 2,
+          },
+          {
+            disciplina: {
+              create: {
+                nome: 'Laboratório de Física I',
+                codigo: 'FIS077',
+                creditos: 2,
+              },
+            },
+            periodo: 2,
+          },
+          {
+            disciplina: {
+              create: {
+                nome: 'Cálculo II',
+                codigo: 'MAT156',
+              },
+            },
+            periodo: 2,
+          },
+          {
+            disciplina: {
+              create: {
+                nome: 'Laboratório de Transformações Químicas',
+                codigo: 'QUI168',
+                creditos: 2,
+              },
+            },
+            periodo: 2,
+          },
+          {
+            disciplina: {
+              create: {
+                nome: 'Estrutura de Dados I',
+                codigo: 'DCC013',
+              },
+            },
+            periodo: 3,
+          },
+          {
+            disciplina: {
+              create: {
+                nome: 'Orientação a Objetos',
+                codigo: 'DCC025',
+              },
+            },
+            periodo: 3,
+          },
+          {
+            disciplina: {
+              create: {
+                nome: 'Circuitos Digitais',
+                codigo: 'DCC122',
+              },
+            },
+            periodo: 3,
+          },
+          {
+            disciplina: {
+              create: {
+                nome: 'Lógica e Fundamentos da Computação',
+                codigo: 'DCC160',
+              },
+            },
+            periodo: 3,
+          },
+          {
+            disciplina: {
+              create: {
+                nome: 'Desenvolvimento Web',
+                codigo: 'DCC202',
+                creditos: 2,
+              },
+            },
+            periodo: 3,
+          },
+          {
+            disciplina: {
+              create: {
+                nome: 'Introdução à Teoria dos Números',
+                codigo: 'MAT143',
+              },
+            },
+            periodo: 3,
+          },
+          {
+            disciplina: {
+              create: {
+                nome: 'Cálculo III',
+                codigo: 'MAT157',
+              },
+            },
+            periodo: 3,
+          },
+          {
+            disciplina: {
+              create: {
+                nome: 'Cálculo Numérico',
+                codigo: 'DCC008',
+              },
+            },
+            periodo: 4,
+          },
+          {
+            disciplina: {
+              create: {
+                nome: 'Estrutura de Dados I',
+                codigo: 'DCC012',
+              },
+            },
+            periodo: 4,
+          },
+          {
+            disciplina: {
+              create: {
+                nome: 'Organização de Computadores I',
+                codigo: 'DCC070',
+              },
+            },
+            periodo: 4,
+          },
+          {
+            disciplina: {
+              create: {
                 nome: 'Modelagem de Sistemas',
                 codigo: 'DCC117',
+              },
+            },
+            periodo: 4,
+          },
+          {
+            disciplina: {
+              create: {
+                nome: 'Equações Diferenciais I',
+                codigo: 'MAT092',
+              },
+            },
+            periodo: 4,
+          },
+          {
+            disciplina: {
+              create: {
+                nome: 'Álgebra Linear',
+                codigo: 'MAT158',
               },
             },
             periodo: 4,
@@ -57,16 +318,7 @@ app.listen(port, () => {
                 codigo: 'DCC059',
               },
             },
-            periodo: 3,
-          },
-          {
-            disciplina: {
-              create: {
-                nome: 'Estrutura de Dados I',
-                codigo: 'DCC013',
-              },
-            },
-            periodo: 2,
+            periodo: 5,
           },
         ]
       }

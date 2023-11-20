@@ -34,6 +34,10 @@ model Disciplina {
   // curso - disciplina (many to many)
   cursos CursoDisciplina[]
 
+  // disciplina - pre requisito (many to many)
+  preReq DisciplinaDisciplina[] @relation("pre")
+  posReq DisciplinaDisciplina[] @relation("pos")
+
   // disciplina - turma (one to many)
   turmas Turma[]
 
@@ -144,6 +148,15 @@ model CursoDisciplina{
   periodo Int @default(1)
 
   @@id([codigoCurso, codigoDisciplina])
+}
+
+model DisciplinaDisciplina{
+  codigoPre String @db.VarChar(10)
+  codigoPos String @db.VarChar(10)
+  pre Disciplina @relation(fields: [codigoPre], references: [codigo], "pre")
+  pos Disciplina @relation(fields: [codigoPos], references: [codigo], "pos")
+
+  @@id([codigoPre, codigoPos])
 }
 
 model EstudanteTurma{
