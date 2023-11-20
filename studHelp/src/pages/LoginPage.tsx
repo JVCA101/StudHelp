@@ -2,15 +2,55 @@ import { useState } from "react";
 import logoImage from "../assets/logo.png"; // Ajuste o caminho conforme a estrutura do seu projeto
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
+import LoginException from "../components/Models/LoginException";
+import { Estudante } from "../../props/data";
 
 function LoginPage() {
+  const user: Estudante = {
+    nome: "João",
+    login: "202265178AC",
+    senha: "123456",
+    admin: false,
+    curso: {
+      nome: "string",
+      codigo: "string",
+      grade: {
+        grade: [],
+      },
+    },
+    historico: [],
+    anoDeIngresso: "",
+    matriculadas: [],
+    grupos: [],
+  };
+
   const handleClick = () => {
-    window.location.href = "/aluno";
+    if (login === user.login && password === user.senha) {
+      if (user.admin) {
+        window.location.href = "/admin";
+      } else {
+        window.location.href = "/aluno";
+      }
+    } else {
+      onFailLogin();
+    }
   };
   const [password, setPassword] = useState("");
+  const [login, setLogin] = useState("");
+
   const [showPassword, setShowPassword] = useState(false);
+
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
+  };
+  const [failLogin, setFailLogin] = useState(false);
+
+  const onFailLogin = () => {
+    setFailLogin(true);
+  };
+
+  const closeFailLogin = () => {
+    setFailLogin(false);
   };
   return (
     <div className="bg-blue-300 max-sm:bg-blue-950 shadow-lg w-screen h-screen flex justify-center items-center relative">
@@ -32,6 +72,8 @@ function LoginPage() {
               type="text"
               placeholder="Matrícula"
               className="block w-full p-2 border border-gray-300 rounded"
+              value={login}
+              onChange={(e) => setLogin(e.target.value)}
             />
           </div>
           <div className="mb-4 px-10 flex">
@@ -59,6 +101,7 @@ function LoginPage() {
           </button>
         </div>
       </div>
+      <LoginException open={failLogin} onClose={closeFailLogin} />
     </div>
   );
 }
