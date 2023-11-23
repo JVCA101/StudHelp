@@ -8,10 +8,13 @@ import { ComponentStyle } from "../components/Models/ComponentStyle";
 import DisciplinesHeader from "../components/Headers/DisciplinesHeader";
 import BodyStyle from "../components/Models/BodyStyle";
 import { useState } from "react";
+import { Disciplina } from "../../props/data";
 
 const DisciplinesPage = () => {
   const open = useSelector((state: AppState) => state.open);
   const [inputContent, setInputContent] = useState("");
+
+  const disciplina: Disciplina = null;
 
   document.title = "Disciplinas - StudHelp";
   return (
@@ -24,14 +27,24 @@ const DisciplinesPage = () => {
           setInputContent={setInputContent}
           inputContent={inputContent}
         />
-        <BodyStyle>
-          <ComponentStyle>
-            <DisciplinesBody />
-          </ComponentStyle>
-          <ComponentStyle>
-            <DisciplesMaterials />
-          </ComponentStyle>
-        </BodyStyle>
+        {disciplina === null ? (
+          <BodyStyle>
+            <ComponentStyle>
+              <h1 className="font-roboto text-center text-2xl">
+                Insira código de disciplina para exibir informações.
+              </h1>
+            </ComponentStyle>
+          </BodyStyle>
+        ) : (
+          <BodyStyle>
+            <ComponentStyle>
+              <DisciplinesBody />
+            </ComponentStyle>
+            <ComponentStyle>
+              <DisciplesMaterials />
+            </ComponentStyle>
+          </BodyStyle>
+        )}
       </PageComponents>
     </div>
   );
