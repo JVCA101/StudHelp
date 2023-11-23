@@ -14,14 +14,16 @@ export const GroupHeader = ({
   return (
     <HeaderStyle>
       <div className="w-full h-full flex">
-        <div className="w-[70%]">
+        <div className="w-full mr-[30%] ">
           <SearchDisciplinesHeader
             content={"Filtrar por código de Disciplina"}
             setInputContent={setInputContent}
             inputContent={inputContent}
           />
         </div>
-        <CreateGroup />
+        <div className="w-full">
+          <CreateGroup />
+        </div>
       </div>
     </HeaderStyle>
   );

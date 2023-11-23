@@ -20,7 +20,7 @@ function SearchDisciplinesHeader({
           </h1>
         </div>
         <div className="flex gap-x-1">
-          <div className="w-1/2">
+          <div className="w-full">
             <InputModel
               type="text"
               placeholder={content}
