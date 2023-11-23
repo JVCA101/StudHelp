@@ -29,10 +29,26 @@ function HeaderAluno({ open }: Props) {
       <div
         className={`px-4  ${
           open ? "text-[2.2rem]" : "text-[2.5rem]"
-        }  duration-1000 font-semibold font-roboto py-16 relative flex-col gap-x-24 text-blue-900 `}
+        }  duration-1000 font-semibold font-roboto py-16 relative flex text-blue-900 `}
       >
-        <h1>Aluno: {name}</h1>
-        <h1>Curso: {course}</h1>
+        <h1 className=" text-blue-950">
+          Aluno:{" "}
+          <span
+            className={`${
+              open ? "text-[2.0rem]" : "text-[2.3rem]"
+            } mr-4 text-blue-900`}
+          >
+            {name}
+          </span>
+          Curso:{" "}
+          <span
+            className={`${
+              open ? " text-blue-900 text-[2.0rem]" : "text-[2.3rem]"
+            }`}
+          >
+            {course}
+          </span>
+        </h1>
       </div>
     </HeaderStyle>
   );
