@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import { AppState } from "../../props/state";
 import { ComponentStyle } from "../components/Models/ComponentStyle";
 import BodyStyle from "../components/Models/BodyStyle";
+import SideBarModel from "../components/Models/SidebarModel";
 
 const StudentPage = () => {
   const open = useSelector((state: AppState) => state.open);
