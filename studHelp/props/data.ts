@@ -5,6 +5,17 @@ export interface Usuario {
   senha: string;
 }
 
+export interface Grupo {
+  disciplina: Disciplina;
+  descricao: string;
+  dia: string;
+  hora: string;
+  local: string;
+  adm: Usuario;
+  currentMembers: Array<Estudante>;
+  totalMembers: number;
+}
+
 export interface Estudante extends Usuario {
   curso: Curso;
   historico: Array<Disciplina>;
