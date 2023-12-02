@@ -38,7 +38,7 @@ export const SideBarModel = ({
       <div className="flex select-none text-blue-900 font-roboto max-md:opacity-0 max-md:w-0">
         <div
           className={`${
-            open ? "md:w-[40%] min-[1200px]:w-[25%]" : "w-[12%]"
+            open ? "md:w-[40%] min-[1200px]:w-[25%]" : "w-[12%] md:w-[20%]"
           } duration-1000 h-screen bg-gradient-to-b from-blue-400  via-blue-500  to-blue-200 relative`}
         >
           <img
@@ -81,7 +81,7 @@ export const SideBarModel = ({
                       className={`duration-1000 ${!open && "hidden"}`}
                     />
                     <img
-                      className={`w-16 scale-75 origin-center  py-4 duration-1000 ${
+                      className={`w-16  scale-75 origin-center  py-4 duration-1000 ${
                         open && "rotate-[360deg]"
                       } ${
                         !open && "w-[40%] origin-center relative left-[25%]"

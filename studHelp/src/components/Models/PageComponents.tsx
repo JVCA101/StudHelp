@@ -10,7 +10,7 @@ export const PageComponents = ({ children, open }: PageComponentsProps) => {
         ${
           open
             ? "md:left-[40%] md:w-[60%] min-[1200px]:left-[25%]  min-[1200px]:w-[75%]"
-            : "w-[88%] left-[12%] max-md:w-screen max-md:left-0"
+            : "w-[80%] left-[20%] max-md:w-screen max-md:left-0"
         }`}
     >
       {children}

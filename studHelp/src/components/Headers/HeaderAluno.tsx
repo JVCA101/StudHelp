@@ -28,7 +28,9 @@ function HeaderAluno({ open }: Props) {
       </div>
       <div
         className={`px-4  ${
-          open ? "text-[2.2rem]" : "text-[2.5rem]"
+          open
+            ? "max-md:text-[1.7rem] max-[560px]:text-[1.8rem] max-[450px]:text-[1.345rem] text-[2.2rem]"
+            : "text-[2.5rem]"
         }  duration-1000 font-semibold font-roboto top-[30%] relative flex text-blue-900 `}
       >
         <div className="flex max-lg:flex-col text-blue-950">
@@ -36,7 +38,9 @@ function HeaderAluno({ open }: Props) {
             Aluno:{" "}
             <span
               className={`${
-                open ? "text-[2.0rem]" : "text-[2.3rem]"
+                open
+                  ? "max-[560px]:text-[1.6rem] max-[450px]:text-[1.15rem] max-md:text-[1.5rem] text-[2.0rem]"
+                  : "text-[2.2rem]"
               } mr-4 text-blue-900`}
             >
               {name}
@@ -46,7 +50,9 @@ function HeaderAluno({ open }: Props) {
             Curso:{" "}
             <span
               className={`${
-                open ? " text-blue-900 text-[2.0rem]" : "text-[2.3rem]"
+                open
+                  ? " text-blue-900 max-[450px]:text-[1.154rem] max-[560px]:text-[1.6rem] max-md:text-[1.5rem] text-[2.0rem]"
+                  : "text-[2.2rem]"
               }`}
             >
               {course}
