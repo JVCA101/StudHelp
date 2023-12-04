@@ -21,15 +21,15 @@ app.listen(port, () => {
       data: [
         {
           nome: 'Ciência da Computação',
-          codigo: '65A',
+          codigo: '35A',
         },
         {
-          nome: 'Engenharia de Computação',
+          nome: 'Engenharia Computacional',
           codigo: '65B',
         },
         {
           nome: 'Sistemas de Informação',
-          codigo: '65C',
+          codigo: '76A',
         },
       ]
     })
@@ -785,33 +785,6 @@ app.listen(port, () => {
       }
     },
   })
-  // const disciplinas = await prisma.disciplina.create({
-  //   data: {
-  //     nome: 'Modelagem de Sistemas',
-  //     codigo: 'DCC117',
-  //     cursos: { 
-  //       create: [
-  //         {
-  //           curso:{
-  //             connect: {
-  //               codigo: '65A' 
-  //             } 
-  //           },
-  //           periodo: 4 
-  //         },
-  //         {
-  //           curso:{
-  //             connect: {
-  //               codigo: '65B' 
-  //             } 
-  //           },
-  //           periodo: 3 
-  //         },
-  //       ],
-  //     },
-  //   },
-  // })
-  // console.log(disciplinas);
   const user  = await prisma.estudante.create({
     data: {
       nome: 'Teste',
@@ -822,23 +795,6 @@ app.listen(port, () => {
           codigo: '65A',
         },
       },
-      turmas:{
-        create: [
-          {
-            turma: {
-              create:
-              {
-                disciplina: {
-                  connect: {
-                    codigo: 'DCC117',
-                  },
-                },
-                codigoPeriodo: '2023.3',
-              },
-            }
-          },
-        ],
-      }
     },
   })
   
