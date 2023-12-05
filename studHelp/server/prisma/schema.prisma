@@ -47,10 +47,10 @@ model Disciplina {
   discussoes Discussao[]
 
   // disciplina - material (one to many)
-  materiais Material[]
+  materiais MaterialApoio[]
 }
 
-model Material {
+model MaterialApoio {
   id   Int    @id @default(autoincrement())
   nome String @db.VarChar(50)
   link String @db.VarChar(100)
@@ -70,6 +70,7 @@ model Turma {
   // turma - estudante (many to many)
   alunos EstudanteTurma[]
 
+  // periodo - turma (one to many)
   periodo       Periodo @relation(fields: [codigoPeriodo], references: [codigo])
   codigoPeriodo String  @db.VarChar(10)
 }
@@ -77,6 +78,7 @@ model Turma {
 model Periodo {
   codigo String @id @db.VarChar(10)
 
+  // periodo - turma (one to many)
   turmas Turma[]
 }
 
