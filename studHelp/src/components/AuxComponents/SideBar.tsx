@@ -1,11 +1,23 @@
 // import { useEffect } from "react";
+import { useState } from "react";
 import { AppState } from "../../../props/state.ts";
 import SideBarMobile from "../Models/SideBarMobile.tsx";
 import SideBarModel from "../Models/SidebarModel.tsx";
 import { useSelector } from "react-redux";
+import About from "../Models/About.tsx";
 
 const SideBar: React.FC = () => {
   const open = useSelector((state: AppState) => state.open); // Você deve tipar o state apropriadamente
+
+  const [isAboutOpen, setIsPopupOpen] = useState(false);
+
+  const openAbout = () => {
+    setIsPopupOpen(true);
+  };
+
+  const closeAbout = () => {
+    setIsPopupOpen(false);
+  };
 
   const Menus = [
     { title: "Página do Aluno", src: "graduation 1", href: "/aluno" },
@@ -24,7 +36,10 @@ const SideBar: React.FC = () => {
           subTextSize={"sm"}
           Menus={Menus}
         >
-          <div className="flex w-full absolute p-10 gap-x-2 bottom-0 px-6 cursor-pointer opacity-50 hover:opacity-100">
+          <div
+            className="flex w-full absolute p-10 gap-x-2 bottom-0 px-6 cursor-pointer opacity-50 hover:opacity-100 "
+            onClick={openAbout}
+          >
             <img
               src="./src/assets/about 1.svg"
               className={`scale-[1.3] duration-1000 ${
@@ -39,6 +54,7 @@ const SideBar: React.FC = () => {
               Sobre
             </h1>
           </div>
+          <About isOpen={isAboutOpen} onClose={closeAbout} />
         </SideBarModel>
       </div>
       <SideBarMobile Menus={Menus} />
