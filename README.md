@@ -23,5 +23,5 @@ cd ./studhelp/
 npm install
 npm i -D react-router-dom
 npm install react-icons --save
-npm install react-redux]
+npm install react-redux
 ```
