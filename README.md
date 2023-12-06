@@ -15,3 +15,13 @@
 [Diagramas de Transição de Estados](https://drive.google.com/drive/folders/1PJjWgDrbXSmK8PDlOoiut_eGzUukskeY?usp=sharing)
 
 [Diagramas de Sequencia](https://drive.google.com/drive/folders/1k1YrVld4CwOqvTGcFGG5emzYKlz7SN9i?usp=sharing)
+
+### Instalação
+Para o projeto rodar corretamente, é necessário seguir os seguintes passos:
+```
+cd ./studhelp/
+npm install
+npm i -D react-router-dom
+npm install react-icons --save
+npm install react-redux
+```

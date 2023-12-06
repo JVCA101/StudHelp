@@ -13,18 +13,34 @@ CREATE TABLE `Disciplina` (
     `creditos` INTEGER NOT NULL DEFAULT 4,
     `dificuldade` ENUM('FACIL', 'MEDIO', 'DIFICIL') NOT NULL DEFAULT 'MEDIO',
     `ementa` VARCHAR(20) NULL,
-    `materiais` VARCHAR(20) NULL,
 
     PRIMARY KEY (`codigo`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `Turma` (
+CREATE TABLE `Material` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `codigoPeriodo` VARCHAR(10) NOT NULL,
+    `nome` VARCHAR(50) NOT NULL,
+    `link` VARCHAR(100) NOT NULL,
     `disciplinaCodigo` VARCHAR(10) NOT NULL,
 
     PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `Turma` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `disciplinaCodigo` VARCHAR(10) NOT NULL,
+    `codigoPeriodo` VARCHAR(10) NOT NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `Periodo` (
+    `codigo` VARCHAR(10) NOT NULL,
+
+    PRIMARY KEY (`codigo`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
@@ -85,6 +101,14 @@ CREATE TABLE `CursoDisciplina` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
+CREATE TABLE `DisciplinaDisciplina` (
+    `codigoPre` VARCHAR(10) NOT NULL,
+    `codigoPos` VARCHAR(10) NOT NULL,
+
+    PRIMARY KEY (`codigoPre`, `codigoPos`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
 CREATE TABLE `EstudanteTurma` (
     `turmaId` INTEGER NOT NULL,
     `estudanteId` INTEGER NOT NULL,
@@ -102,7 +126,13 @@ CREATE TABLE `GrupoEstudoEstudante` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- AddForeignKey
+ALTER TABLE `Material` ADD CONSTRAINT `Material_disciplinaCodigo_fkey` FOREIGN KEY (`disciplinaCodigo`) REFERENCES `Disciplina`(`codigo`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
 ALTER TABLE `Turma` ADD CONSTRAINT `Turma_disciplinaCodigo_fkey` FOREIGN KEY (`disciplinaCodigo`) REFERENCES `Disciplina`(`codigo`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `Turma` ADD CONSTRAINT `Turma_codigoPeriodo_fkey` FOREIGN KEY (`codigoPeriodo`) REFERENCES `Periodo`(`codigo`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `Estudante` ADD CONSTRAINT `Estudante_cursoCodigo_fkey` FOREIGN KEY (`cursoCodigo`) REFERENCES `Curso`(`codigo`) ON DELETE RESTRICT ON UPDATE CASCADE;
@@ -130,6 +160,12 @@ ALTER TABLE `CursoDisciplina` ADD CONSTRAINT `CursoDisciplina_codigoCurso_fkey` 
 
 -- AddForeignKey
 ALTER TABLE `CursoDisciplina` ADD CONSTRAINT `CursoDisciplina_codigoDisciplina_fkey` FOREIGN KEY (`codigoDisciplina`) REFERENCES `Disciplina`(`codigo`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `DisciplinaDisciplina` ADD CONSTRAINT `DisciplinaDisciplina_codigoPre_fkey` FOREIGN KEY (`codigoPre`) REFERENCES `Disciplina`(`codigo`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `DisciplinaDisciplina` ADD CONSTRAINT `DisciplinaDisciplina_codigoPos_fkey` FOREIGN KEY (`codigoPos`) REFERENCES `Disciplina`(`codigo`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `EstudanteTurma` ADD CONSTRAINT `EstudanteTurma_turmaId_fkey` FOREIGN KEY (`turmaId`) REFERENCES `Turma`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
